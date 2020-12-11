@@ -1,0 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
+
+.unit-description h2, .entry-title.h1.intro-title{
+	font-family: 'Roboto Slab', serif;
+	font-size: 2.5em;
+}
