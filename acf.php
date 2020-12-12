@@ -104,6 +104,18 @@ function ncbce_week_cornerstone(){
 	}
 }
 
+function nbce_week_dpi(){
+	if(get_field('dpi_standards')){
+		$html = '<div class="dpi"><h2>DPI Standards</h2><ul>';
+		$standards = get_field('dpi_standards');
+		foreach ($standards as $key => $standard) {
+			$html .= "<li>{$standard->name}</li>";
+		}
+		return $html . '</ul></div>';
+	}
+}
+
+
 function nbce_week_hdi(){
 	if(get_field('hdi_competencies')){
 		$html = '<div class="hdi"><h2>HDI Standards</h2><ul>';
