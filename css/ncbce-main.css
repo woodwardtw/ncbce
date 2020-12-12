@@ -50,3 +50,8 @@ purple = #21145f
 	font-size: 1em;
 	font-family: 'Roboto Slab', serif;
 }
+
+.word {
+	font-weight: 700;
+	text-decoration: underline;
+}

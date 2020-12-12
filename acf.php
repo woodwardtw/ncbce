@@ -187,6 +187,48 @@ function ncbce_week_skills(){
 		endif;
 	}
 
+function ncbce_week_vocab(){
+	$html = '';
+	if( have_rows('vocabulary') ):
+		$html = '<div class="vocabulary"><h2>Vocabulary</h2><ul>';
+	    // Loop through rows.
+	    while( have_rows('vocabulary') ) : the_row();
+
+	        // Load sub field value.
+	        $word = get_sub_field('word');
+	        $definition = get_sub_field('definition');
+	        $html .= "<li><span class='word'>{$word}</span> - {$definition}</li>";
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html . "</ul></div>";
+		// No value.
+		else :
+		    // Do something...
+		endif;
+	}
+
+
+function ncbce_week_supporting_vocab(){
+	$html = '';
+	if( have_rows('supporting_vocabulary') ):
+		$html = '<div class="supporting-vocabulary"><h2>Supporting Vocabulary</h2><ul>';
+	    // Loop through rows.
+	    while( have_rows('supporting_vocabulary') ) : the_row();
+
+	        // Load sub field value.
+	        $word = get_sub_field('word');
+	        $html .= "<li>{$word}</li>";
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html . "</ul></div>";
+		// No value.
+		else :
+		    // Do something...
+		endif;
+	}
+
 function ncbce_week_weekly_map(){
 	if (get_field('weekly_map')){
 		$map = get_field('weekly_map');

@@ -35,6 +35,8 @@ get_header();
 		 	<?php echo ncbce_week_knowledge();?>
 		 	<?php echo ncbce_week_skills();?>
 		 </div>
+		 <?php echo ncbce_week_vocab();?>
+		 <?php echo ncbce_week_supporting_vocab();?>
 		 <div class="map row">
 		 	<?php echo ncbce_week_weekly_map();?>
 		 </div>
