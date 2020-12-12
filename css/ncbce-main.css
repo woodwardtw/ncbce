@@ -1,6 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap');
 
-.unit-description h2, .entry-title.h1.intro-title{
+.entry-title.h1.intro-title {
+	font-family: 'Roboto Slab', serif;
+}
+
+.unit-description h2, .instructional-time h2, .weekly-map h2 {
 	font-family: 'Roboto Slab', serif;
 	font-size: 2.5em;
+	color: #21145f;
+	margin-top: 20px;
+	text-align: left;
+	width: 100%;
+}
+
+
+.weekly-map {
+	display: flex;
+  	flex-flow: row wrap;
+  	justify-content: space-around;
+  	align-content: flex-start;
+}
+
+
+
+.day {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px 20px;
+}
+
+.day:nth-child(even){
+	background-color: #efefef;
+}
+
+.day h3{
+	font-size: 1em;
+	font-family: 'Roboto Slab', serif;
 }

@@ -24,6 +24,8 @@ get_header();
 
 		<?php
 			echo ncbce_unit_description();
+			echo ncbce_unit_weeks();	
+			echo ncbce_unit_map();
 			//the_content(); ?>
 
 	</div>
