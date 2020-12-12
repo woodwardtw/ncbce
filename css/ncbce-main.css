@@ -28,6 +28,7 @@
 	display: inline-block;
 	vertical-align: top;
 	padding: 10px 20px;
+	height: 100%;
 }
 
 .day:nth-child(even){

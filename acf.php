@@ -116,17 +116,22 @@ function nbce_week_dpi(){
 }
 
 function nbce_week_comptia(){
-	if(get_field('comptia_domain_objectives')){
-		$html = '<div class="dpi"><h2>DPI Standards</h2><ul>';
-		$standards = get_field('comptia_domain_objectives');
-		if (have_rows('comptia_domain_objectives')) {
-			// while(have_rows('comptia_domain_objectives')){
-			// 	$dpi = get_sub_field('objective');
-			// 	$html .= "<li>{$dpi}</li>";
-			// }
-		}
-		return $html . '</ul></div>';
-	}
+	if( have_rows('comptia_domain_objectives') ):
+	    // Loop through rows.
+	    $html = '<div class="comptia"><h2>CompTIA Objectives</h2><ul>';
+	    while( have_rows('comptia_domain_objectives') ) : the_row();
+
+	        // Load sub field value.
+	        $html .= '<li>' . get_sub_field('objective') . '</li>';
+	        
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html . '</ul></div>';
+		// No value.
+		else :
+		    // Do something...
+		endif;
 }
 
 

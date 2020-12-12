@@ -30,8 +30,7 @@ get_header();
 			echo nbce_week_dpi();
 			echo nbce_week_comptia();
 			echo nbce_week_hdi();
-			//the_content(); ?>
-
+			//the_content(); ?>			
 	</div>
 
 </article>

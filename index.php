@@ -18,12 +18,15 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 //add_action('wp_enqueue_scripts', 'ncbce_load_scripts', 9999);
 add_action( 'wp_footer', 'ncbce_load_scripts' );
 
-function ncbce_load_scripts() {                           
-    $deps = array('jquery');
-    $version= '1.0'; 
-    $in_footer = true;    
-    wp_enqueue_script('ncbce-plugin-js', plugin_dir_url( __FILE__) . 'js/ncbce-main.js', $deps, $version, $in_footer); 
-    wp_enqueue_style( 'ncbce-plugin', plugin_dir_url( __FILE__) . 'css/ncbce-main.css');
+function ncbce_load_scripts() {  
+  if ( 'unit' === get_post_type() || 'week' === get_post_type() ) {                         
+      $deps = array('jquery');
+      $version= '1.0'; 
+      $in_footer = true;    
+      wp_enqueue_script('ncbce-plugin-js', plugin_dir_url( __FILE__) . 'js/ncbce-main.js', $deps, $version, $in_footer); 
+      wp_enqueue_style( 'ncbce-plugin', plugin_dir_url( __FILE__) . 'css/ncbce-main.css');
+      wp_enqueue_style( 'ncbce-boot', plugin_dir_url( __FILE__) . 'css/bootstrap-grid.min.css');
+    }
 }
 
 
