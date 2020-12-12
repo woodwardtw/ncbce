@@ -186,3 +186,30 @@ function ncbce_week_skills(){
 		    // Do something...
 		endif;
 	}
+
+function ncbce_week_weekly_map(){
+	if (get_field('weekly_map')){
+		$map = get_field('weekly_map');
+		$mon = "<div class='day col'><h3>Monday</h3>{$map['monday']}</div>"; //<div class='mon'><h3>Monday</h3>
+		$tues = "<div class='day col'><h3>Tuesday</h3>{$map['tuesday']}</div>";
+		$wed = "<div class='day col'><h3>Wednesday</h3>{$map['wednesday']}</div>";
+		$thurs = "<div class='day col'><h3>Thursday</h3>{$map['thursday']}</div>";
+		$fri = "<div class='day col'><h3>Friday</h3>{$map['friday']}</div>";
+		return '<div class="col-md-12"><h2>Weekly Map</h2></div>' .$mon . $tues . $wed . $thurs . $fri; 
+	}
+
+}
+
+function ncbce_week_lessons(){
+	$html = "<div class='lessons'><h2>Lesson Ideas</h2>";
+	if(get_field('lesson_ideas')){
+		return $html . get_field('lesson_ideas') . "</div>";
+	}
+}
+
+function ncbce_week_resources(){
+	$html = "<div class='resources'><h2>Potential Resources</h2>";
+	if(get_field('potential_resources')){
+		return $html . get_field('potential_resources') . "</div>";
+	}
+}

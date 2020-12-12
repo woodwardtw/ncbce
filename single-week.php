@@ -35,6 +35,11 @@ get_header();
 		 	<?php echo ncbce_week_knowledge();?>
 		 	<?php echo ncbce_week_skills();?>
 		 </div>
+		 <div class="map row">
+		 	<?php echo ncbce_week_weekly_map();?>
+		 </div>
+		 	<?php echo ncbce_week_lessons();?>
+		 	<?php echo ncbce_week_resources();?>
 	</div>
 
 </article>
