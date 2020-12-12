@@ -52,3 +52,27 @@ function ncbce_unit_map(){
 	$fri = "<div class='day'><h3>Friday</h3>{$map['friday']}</div>";
     return $html . "<div class='week'>{$mon}{$tues}{$wed}{$thurs}{$fri}</div></div>";
 }
+
+/*
+WEEK SPECIFIC 
+*/
+function nbce_week_questions(){
+	$html = '';
+	if( have_rows('essential_questions') ):
+
+	    // Loop through rows.
+	    while( have_rows('essential_questions') ) : the_row();
+
+	        // Load sub field value.
+	        $question .= get_sub_field('question');
+	        var_dump($question);
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html;
+		// No value.
+		else :
+		    // Do something...
+		endif;
+	}
+
