@@ -56,23 +56,29 @@ function ncbce_unit_map(){
 /*
 WEEK SPECIFIC 
 */
-function nbce_week_questions(){
-	$html = '';
+function ncbce_week_questions(){
 	if( have_rows('essential_questions') ):
-
 	    // Loop through rows.
+	    $html = '<div class="essential-questions"><h2>Essential Questions</h2><ul>';
 	    while( have_rows('essential_questions') ) : the_row();
 
 	        // Load sub field value.
-	        $question .= get_sub_field('question');
-	        var_dump($question);
+	        $html .= '<li>' . get_sub_field('question') . '</li>';
+	        
 	        // Do something...
 	    // End loop.
 	    endwhile;
-	    return $html;
+	    return $html . '</ul></div>';
 		// No value.
 		else :
 		    // Do something...
 		endif;
 	}
+
+function ncbce_week_big_ideas(){
+	if (get_field('big_ideas')){
+		$ideas = get_field('big_ideas');
+		return "<div class='big-ideas'><h2>Big Ideas</h2> {$ideas}</div>";
+	}
+}
 

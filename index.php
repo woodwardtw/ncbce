@@ -32,7 +32,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'acf.php');//acf specific code
 require_once( plugin_dir_path( __FILE__ ) . 'custom-fields.php');//custom post types specific code
 require_once( plugin_dir_path( __FILE__ ) . 'custom-taxonomy.php');//custom taxonomy specific code
 
-function ncbce_load_unit_template( $template ) {
+function ncbce_load_templates( $template ) {
     global $post;
 
     if ( 'unit' === $post->post_type && locate_template( array( 'single-unit.php' ) ) !== $template ) {
@@ -45,10 +45,21 @@ function ncbce_load_unit_template( $template ) {
         return plugin_dir_path( __FILE__ ) . 'single-unit.php';
     }
 
+    if ( 'week' === $post->post_type && locate_template( array( 'single-week.php' ) ) !== $template ) {
+        /*
+         * This is a 'unit' post
+         * AND a 'single unit template' is not found on
+         * theme or child theme directories, so load it
+         * from our plugin directory.
+         */
+        return plugin_dir_path( __FILE__ ) . 'single-week.php';
+    }
+
     return $template;
 }
 
-add_filter( 'single_template', 'ncbce_load_unit_template' );
+add_filter( 'single_template', 'ncbce_load_templates' );
+
 
 
 

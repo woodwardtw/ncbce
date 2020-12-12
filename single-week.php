@@ -21,9 +21,9 @@ get_header();
 <article id="post-<?php the_ID(); ?>" class="week">
 
 	<div class="entry-content">
-
 		<?php
-			echo ncbce_week_questions();			
+			echo ncbce_week_questions();
+			echo ncbce_week_big_ideas();		
 			//the_content(); ?>
 
 	</div>
