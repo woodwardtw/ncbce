@@ -115,6 +115,21 @@ function nbce_week_dpi(){
 	}
 }
 
+function nbce_week_comptia(){
+	if(get_field('comptia_domain_objectives')){
+		$html = '<div class="dpi"><h2>DPI Standards</h2><ul>';
+		$standards = get_field('comptia_domain_objectives');
+		if (have_rows('comptia_domain_objectives')) {
+			// while(have_rows('comptia_domain_objectives')){
+			// 	$dpi = get_sub_field('objective');
+			// 	$html .= "<li>{$dpi}</li>";
+			// }
+		}
+		return $html . '</ul></div>';
+	}
+}
+
+
 
 function nbce_week_hdi(){
 	if(get_field('hdi_competencies')){

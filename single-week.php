@@ -28,6 +28,7 @@ get_header();
 			echo ncbce_week_framing();
 			echo ncbce_week_cornerstone();
 			echo nbce_week_dpi();
+			echo nbce_week_comptia();
 			echo nbce_week_hdi();
 			//the_content(); ?>
 
