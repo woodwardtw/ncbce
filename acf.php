@@ -82,3 +82,38 @@ function ncbce_week_big_ideas(){
 	}
 }
 
+
+function ncbce_week_lives(){
+	if (get_field('connections_to_students_lives')){
+		$connection = get_field('connections_to_students_lives');
+		return "<div class='lives'><h2>Connection to Student Lives</h2> {$connection}</div>";
+	}
+}
+
+function ncbce_week_framing(){
+	if (get_field('framing_problem')){
+		$content = get_field('framing_problem');
+		return "<div class='framing'><h2>Framing Problem</h2> {$content}</div>";
+	}
+}
+
+function ncbce_week_cornerstone(){
+	if (get_field('cornerstone_assessment')){
+		$content = wpautop(get_field('cornerstone_assessment'));
+		return "<div class='cornerstone'><h2>Cornerstone Assessment</h2>{$content}</div>";
+	}
+}
+
+function nbce_week_hdi(){
+	if(get_field('hdi_competencies')){
+		$html = '<div class="hdi"><h2>HDI Standards</h2><ul>';
+		$standards = get_field('hdi_competencies');	
+		foreach ($standards as $key => $standard) {
+			$html .= "<li>{$standard->name}</li>";
+		}
+		return $html . '</ul></div>';
+	}
+}
+
+
+

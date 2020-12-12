@@ -23,7 +23,11 @@ get_header();
 	<div class="entry-content">
 		<?php
 			echo ncbce_week_questions();
-			echo ncbce_week_big_ideas();		
+			echo ncbce_week_big_ideas();	
+			echo ncbce_week_lives();	
+			echo ncbce_week_framing();
+			echo ncbce_week_cornerstone();
+			echo nbce_week_hdi();
 			//the_content(); ?>
 
 	</div>
