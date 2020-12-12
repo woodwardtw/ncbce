@@ -104,7 +104,7 @@ function ncbce_week_cornerstone(){
 	}
 }
 
-function nbce_week_dpi(){
+function ncbce_week_dpi(){
 	if(get_field('dpi_standards')){
 		$html = '<div class="dpi"><h2>DPI Standards</h2><ul>';
 		$standards = get_field('dpi_standards');
@@ -115,7 +115,7 @@ function nbce_week_dpi(){
 	}
 }
 
-function nbce_week_comptia(){
+function ncbce_week_comptia(){
 	if( have_rows('comptia_domain_objectives') ):
 	    // Loop through rows.
 	    $html = '<div class="comptia"><h2>CompTIA Objectives</h2><ul>';
@@ -134,9 +134,7 @@ function nbce_week_comptia(){
 		endif;
 }
 
-
-
-function nbce_week_hdi(){
+function ncbce_week_hdi(){
 	if(get_field('hdi_competencies')){
 		$html = '<div class="hdi"><h2>HDI Standards</h2><ul>';
 		$standards = get_field('hdi_competencies');	
@@ -148,4 +146,43 @@ function nbce_week_hdi(){
 }
 
 
+function ncbce_week_knowledge(){
+	$html = '';
+	if( have_rows('essential_knowledge_block') ):
+		$html = '<div class="knowledge col-md-6"><h2>Essential Knowledge</h2><ul>';
+	    // Loop through rows.
+	    while( have_rows('essential_knowledge_block') ) : the_row();
 
+	        // Load sub field value.
+	        $knowledge = get_sub_field('essential_knowledge');
+	        $html .= "<li>{$knowledge}</li>";
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html . "</ul></div>";
+		// No value.
+		else :
+		    // Do something...
+		endif;
+	}
+
+
+function ncbce_week_skills(){
+	$html = '';
+	if( have_rows('essential_skills_block') ):
+		$html = '<div class="skills col-md-6"><h2>Essential Skills</h2><ul>';
+	    // Loop through rows.
+	    while( have_rows('essential_skills_block') ) : the_row();
+
+	        // Load sub field value.
+	        $skill = get_sub_field('essential_skill');
+	        $html .= "<li>{$skill}</li>";
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html . "</ul></div>";
+		// No value.
+		else :
+		    // Do something...
+		endif;
+	}

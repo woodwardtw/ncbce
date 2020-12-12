@@ -27,10 +27,14 @@ get_header();
 			echo ncbce_week_lives();	
 			echo ncbce_week_framing();
 			echo ncbce_week_cornerstone();
-			echo nbce_week_dpi();
-			echo nbce_week_comptia();
-			echo nbce_week_hdi();
-			//the_content(); ?>			
+			echo ncbce_week_dpi();
+			echo ncbce_week_comptia();
+			echo ncbce_week_hdi();
+		 ?>			
+		 <div class="essentials row">
+		 	<?php echo ncbce_week_knowledge();?>
+		 	<?php echo ncbce_week_skills();?>
+		 </div>
 	</div>
 
 </article>
