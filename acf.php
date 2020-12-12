@@ -255,3 +255,36 @@ function ncbce_week_resources(){
 		return $html . get_field('potential_resources') . "</div>";
 	}
 }
+
+
+
+//sort alpha for supporting vocabulary
+function sort_vocab_alpha( $value, $post_id, $field ) {
+	
+	// vars
+	$order = array();
+	
+	// bail early if no value
+	if( empty($value) ) {
+		
+		return $value;
+		
+	}
+	
+	// populate order
+	foreach( $value as $i => $row ) {
+		
+		$order[ $i ] = $row['field_5fd5313108142'];
+		
+	}
+	
+	// multisort
+	array_multisort( $order, SORT_ASC,SORT_NATURAL|SORT_FLAG_CASE, $value );
+	
+	
+	// return	
+	return $value;
+	
+}
+
+add_filter('acf/load_value/name=supporting_vocabulary', 'sort_vocab_alpha', 10, 3);
