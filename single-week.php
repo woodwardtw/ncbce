@@ -19,7 +19,7 @@ get_header();
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="week">
-
+	<h1><?php the_title();?></h1>
 	<div class="entry-content">
 		<?php
 			echo ncbce_week_questions();

@@ -11,6 +11,16 @@ purple = #21145f
   --main-purple: #21145f;
 }
 
+
+.entry-title.h1.intro-title {
+	font-family: 'Roboto Slab', serif;
+}
+
+.single-week h3.entry-title.h1, .single-unit h3.entry-title.h1 {
+	display: none;
+}
+
+
 .week, .unit {
 	font-weight: 400;
     font-size: 1.2rem;
@@ -49,9 +59,6 @@ purple = #21145f
 	margin-top: 50px;
 }
 
-.entry-title.h1.intro-title {
-	font-family: 'Roboto Slab', serif;
-}
 
 .nc-section h2 {
 	font-family: 'Roboto Slab', serif;
