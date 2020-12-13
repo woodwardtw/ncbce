@@ -22,6 +22,28 @@ purple = #21145f
 	font-weight: 600;
 }
 
+/*list items*/
+.week ul, .unit ul {
+	list-style-position: outside;
+}
+
+
+.week li::before, .unit li::before{
+   content: '';
+   display: inline-block;
+   height: 20px;
+   width: 20px;
+   background-image: url('../imgs/star_rays.svg');
+   margin-right: 5px;
+}
+
+
+.week li, .unit li {
+	line-height: 1;
+	font-size: 1.2rem;
+	margin-bottom: 10px;
+	text-indent: -25px;
+}
 
 .nc-section {
 	margin-top: 50px;
