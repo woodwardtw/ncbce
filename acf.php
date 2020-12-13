@@ -245,6 +245,7 @@ function ncbce_week_supporting_vocab(){
 	}
 
 function ncbce_week_weekly_map(){
+	$node = ncbce_rand_node();
 	if (get_field('weekly_map')){
 		$map = get_field('weekly_map');
 		$mon = "<div class='day col'><h3>Monday</h3>{$map['monday']}</div>"; //<div class='mon'><h3>Monday</h3>
@@ -252,7 +253,7 @@ function ncbce_week_weekly_map(){
 		$wed = "<div class='day col'><h3>Wednesday</h3>{$map['wednesday']}</div>";
 		$thurs = "<div class='day col'><h3>Thursday</h3>{$map['thursday']}</div>";
 		$fri = "<div class='day col'><h3>Friday</h3>{$map['friday']}</div>";
-		return '<div class="col-md-12"><h2>Weekly Map</h2></div>' .$mon . $tues . $wed . $thurs . $fri; 
+		return "<div class='col-md-12'><h2{$node}>Weekly Map</h2></div>" .$mon . $tues . $wed . $thurs . $fri; 
 	}
 
 }
