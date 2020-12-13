@@ -46,8 +46,9 @@ purple = #21145f
 }
 
 /*list items*/
-.week ul, .unit ul {
+.week ul, .unit ul{
 	list-style-position: outside;
+	list-style: none;
 }
 
 
@@ -68,11 +69,12 @@ purple = #21145f
 	text-indent: -25px;
 }
 
+
 .nc-section {
 	margin-top: 50px;
 }
 
-.nc-section h2 {
+.nc-section h2, .weeks-list h2 {
 	font-family: 'Roboto Slab', serif;
 	font-size: 2rem;
 	color: var(--main-orange);
@@ -129,7 +131,29 @@ purple = #21145f
 
 /*navigation*/
 
-.here {
+
+.weeks-list li.here {
 	margin-left: 10px;
-	background-color: var(--main-orange);
+	border-left: 5px solid var(--main-orange);
+	background-color: var(--light-gray);
+}
+
+
+/*weeks sidebar navigation*/
+.weeks-list ul {
+	list-style-position: outside;
+	list-style: none;
+	margin-left: 0;
+}
+
+.weeks-list li {
+	line-height: 1;
+	font-size: 1.2rem;
+	margin-bottom: 15px;
+}
+
+.weeks-list li a {
+	padding: 7px 14px;
+	display: block;
+	color: var(--main-purple);
 }
