@@ -31,13 +31,13 @@ get_header();
 			echo ncbce_week_comptia();
 			echo ncbce_week_hdi();
 		 ?>			
-		 <div class="essentials row">
+		 <div class="essentials row nc-section">
 		 	<?php echo ncbce_week_knowledge();?>
 		 	<?php echo ncbce_week_skills();?>
 		 </div>
 		 <?php echo ncbce_week_vocab();?>
 		 <?php echo ncbce_week_supporting_vocab();?>
-		 <div class="map row">
+		 <div class="map row nc-section">
 		 	<?php echo ncbce_week_weekly_map();?>
 		 </div>
 		 	<?php echo ncbce_week_lessons();?>
