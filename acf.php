@@ -13,7 +13,7 @@ UNIT SPECIFIC
 function ncbce_unit_description(){
 	if(get_field('unit_description')){
 		$description = get_field('unit_description');
-		$html = "<div class='unit-description'><h2>Unit Description</h2>{$description}</div>";
+		$html = "<div class='unit-description nc-section'><h2>Unit Description</h2>{$description}</div>";
 		return $html;
 	}
 }
@@ -22,12 +22,12 @@ function ncbce_unit_description(){
 
 function ncbce_unit_weeks(){
 	$weeks = get_field('weeks');
-	$html = '<div class="instructional-time">';
+	$html = '<div class="instructional-time nc-section">';
 	$html .= "<h2>Instructional Time</h2><div class='weekly-total'>" . sizeof($weeks) . " weeks</div><ul>";
 	if( $weeks ): 
 	    foreach( $weeks as $key=>$week ): 
-	    	$permalink = get_permalink( $week->ID );
-        	$title = get_the_title( $week->ID );
+	    	$permalink = get_permalink( $week );
+        	$title = get_the_title( $week );
         	if(explode(':', $title)[2]){
         		$clean_title = explode(':', $title)[2];
         	} else {
@@ -42,7 +42,7 @@ function ncbce_unit_weeks(){
 }
 
 function ncbce_unit_map(){
-	$html = '<div class="weekly-map"><h2>Weekly Map</h2>';
+	$html = '<div class="weekly-map nc-section"><h2>Weekly Map</h2>';
 	$map = get_field('general_weekly_map');
 	//var_dump($map);
 	$mon = "<div class='day'><h3>Monday</h3>{$map['monday']}</div>"; //<div class='mon'><h3>Monday</h3>
@@ -59,7 +59,7 @@ WEEK SPECIFIC
 function ncbce_week_questions(){
 	if( have_rows('essential_questions') ):
 	    // Loop through rows.
-	    $html = '<div class="essential-questions"><h2>Essential Questions</h2><ul>';
+	    $html = '<div class="essential-questions nc-section"><h2>Essential Questions</h2><ul>';
 	    while( have_rows('essential_questions') ) : the_row();
 
 	        // Load sub field value.
@@ -78,7 +78,7 @@ function ncbce_week_questions(){
 function ncbce_week_big_ideas(){
 	if (get_field('big_ideas')){
 		$ideas = get_field('big_ideas');
-		return "<div class='big-ideas'><h2>Big Ideas</h2> {$ideas}</div>";
+		return "<div class='big-ideas nc-section'><h2>Big Ideas</h2> {$ideas}</div>";
 	}
 }
 
@@ -86,27 +86,27 @@ function ncbce_week_big_ideas(){
 function ncbce_week_lives(){
 	if (get_field('connections_to_students_lives')){
 		$connection = get_field('connections_to_students_lives');
-		return "<div class='lives'><h2>Connection to Student Lives</h2> {$connection}</div>";
+		return "<div class='lives nc-section'><h2>Connection to Student Lives</h2> {$connection}</div>";
 	}
 }
 
 function ncbce_week_framing(){
 	if (get_field('framing_problem')){
 		$content = get_field('framing_problem');
-		return "<div class='framing'><h2>Framing Problem</h2> {$content}</div>";
+		return "<div class='framing nc-section'><h2>Framing Problem</h2> {$content}</div>";
 	}
 }
 
 function ncbce_week_cornerstone(){
 	if (get_field('cornerstone_assessment')){
 		$content = wpautop(get_field('cornerstone_assessment'));
-		return "<div class='cornerstone'><h2>Cornerstone Assessment</h2>{$content}</div>";
+		return "<div class='cornerstone nc-section'><h2>Cornerstone Assessment</h2>{$content}</div>";
 	}
 }
 
 function ncbce_week_dpi(){
 	if(get_field('dpi_standards')){
-		$html = '<div class="dpi"><h2>DPI Standards</h2><ul>';
+		$html = '<div class="dpi nc-section"><h2>DPI Standards</h2><ul>';
 		$standards = get_field('dpi_standards');
 		foreach ($standards as $key => $standard) {
 			$html .= "<li>{$standard->name}</li>";
@@ -118,7 +118,7 @@ function ncbce_week_dpi(){
 function ncbce_week_comptia(){
 	if( have_rows('comptia_domain_objectives') ):
 	    // Loop through rows.
-	    $html = '<div class="comptia"><h2>CompTIA Objectives</h2><ul>';
+	    $html = '<div class="comptia nc-section"><h2>CompTIA Objectives</h2><ul>';
 	    while( have_rows('comptia_domain_objectives') ) : the_row();
 
 	        // Load sub field value.
@@ -136,7 +136,7 @@ function ncbce_week_comptia(){
 
 function ncbce_week_hdi(){
 	if(get_field('hdi_competencies')){
-		$html = '<div class="hdi"><h2>HDI Standards</h2><ul>';
+		$html = '<div class="hdi nc-section"><h2>HDI Standards</h2><ul>';
 		$standards = get_field('hdi_competencies');	
 		foreach ($standards as $key => $standard) {
 			$html .= "<li>{$standard->name}</li>";
@@ -149,7 +149,7 @@ function ncbce_week_hdi(){
 function ncbce_week_knowledge(){
 	$html = '';
 	if( have_rows('essential_knowledge_block') ):
-		$html = '<div class="knowledge col-md-6"><h2>Essential Knowledge</h2><ul>';
+		$html = '<div class="knowledge col-md-6 nc-section"><h2>Essential Knowledge</h2><ul>';
 	    // Loop through rows.
 	    while( have_rows('essential_knowledge_block') ) : the_row();
 
@@ -170,7 +170,7 @@ function ncbce_week_knowledge(){
 function ncbce_week_skills(){
 	$html = '';
 	if( have_rows('essential_skills_block') ):
-		$html = '<div class="skills col-md-6"><h2>Essential Skills</h2><ul>';
+		$html = '<div class="skills col-md-6 nc-section"><h2>Essential Skills</h2><ul>';
 	    // Loop through rows.
 	    while( have_rows('essential_skills_block') ) : the_row();
 
@@ -190,7 +190,7 @@ function ncbce_week_skills(){
 function ncbce_week_vocab(){
 	$html = '';
 	if( have_rows('vocabulary') ):
-		$html = '<div class="vocabulary"><h2>Vocabulary</h2><ul>';
+		$html = '<div class="vocabulary nc-section"><h2>Vocabulary</h2><ul>';
 	    // Loop through rows.
 	    while( have_rows('vocabulary') ) : the_row();
 
@@ -212,7 +212,7 @@ function ncbce_week_vocab(){
 function ncbce_week_supporting_vocab(){
 	$html = '';
 	if( have_rows('supporting_vocabulary') ):
-		$html = '<div class="supporting-vocabulary"><h2>Supporting Vocabulary</h2><ul>';
+		$html = '<div class="supporting-vocabulary nc-section"><h2>Supporting Vocabulary</h2><ul>';
 	    // Loop through rows.
 	    while( have_rows('supporting_vocabulary') ) : the_row();
 
@@ -243,14 +243,14 @@ function ncbce_week_weekly_map(){
 }
 
 function ncbce_week_lessons(){
-	$html = "<div class='lessons'><h2>Lesson Ideas</h2>";
+	$html = "<div class='lessons nc-section'><h2>Lesson Ideas</h2>";
 	if(get_field('lesson_ideas')){
 		return $html . get_field('lesson_ideas') . "</div>";
 	}
 }
 
 function ncbce_week_resources(){
-	$html = "<div class='resources'><h2>Potential Resources</h2>";
+	$html = "<div class='resources nc-section'><h2>Potential Resources</h2>";
 	if(get_field('potential_resources')){
 		return $html . get_field('potential_resources') . "</div>";
 	}

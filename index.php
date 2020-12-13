@@ -63,7 +63,70 @@ function ncbce_load_templates( $template ) {
 
 add_filter( 'single_template', 'ncbce_load_templates' );
 
+/*
+UNIT AND WEEK NAVIGATION
+*/
 
+
+function ncbce_unit_navigation(){
+  //show associated weeks for the main module page
+    global $post;
+    $static_id = $post->ID;
+    $type = get_post_type($static_id);
+    
+    if ($type === 'unit'){
+      return ncbce_get_weeks($static_id, get_the_permalink());
+    } 
+    if ($type === 'week'){
+      // The Query
+      $args = array( 'post_type' => 'unit' );
+      $module_query = new WP_Query( $args );
+      // get all the modules for the lesson's page
+      if ( $module_query->have_posts() ) {
+          while ( $module_query->have_posts() ) {
+              $module_query->the_post();
+              $weeks = get_field('weeks', $post->ID);
+              if (in_array($static_id, $weeks)){
+                return ncbce_get_weeks($post->ID, get_the_permalink($static_id));
+              }
+          }
+      } else {
+          // no posts found
+      }
+      /* Restore original Post Data */
+      wp_reset_postdata();
+    }
+
+}
+
+
+
+  
+//get weeks 
+    function ncbce_get_weeks($id, $current_location){
+      global $post;
+      $weeks = get_field('weeks', $id);
+      if( $weeks ){
+          $html = '<div class="weeks-list"><h2>Weeks</h2><ul>';
+          foreach( $weeks as $key=>$week ): 
+            $number = $key+1;
+            $link = get_the_permalink($week);
+            $title = get_the_title($week);
+            if ($link === $current_location){
+              $location = 'here';
+            } else {
+              $location = 'not-here';
+            }
+              // Setup this post for WP functions (variable must be named $post).
+              $html .= "<li class='{$location}'> <a href='{$link}'>{$title}</a></li>";
+          endforeach;
+          return $html . '</ul></div>';
+      } 
+          // Reset the global post object so that the rest of the page works correctly.
+          wp_reset_postdata(); 
+    }
+
+add_shortcode( 'list-weeks', 'ncbce_unit_navigation' );
 
 
 //LOGGER -- like frogger but more useful
