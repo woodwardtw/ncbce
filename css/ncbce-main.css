@@ -11,6 +11,18 @@ purple = #21145f
   --main-purple: #21145f;
 }
 
+.week, .unit {
+	font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.week a, .unit a {
+	color: var(--main-purple);
+	font-weight: 600;
+}
+
+
 .nc-section {
 	margin-top: 50px;
 }
@@ -21,7 +33,7 @@ purple = #21145f
 
 .nc-section h2 {
 	font-family: 'Roboto Slab', serif;
-	font-size: 2.5em;
+	font-size: 2.5rem;
 	color: var(--main-orange);
 	margin-top: 20px;
 	text-align: left;
@@ -51,8 +63,13 @@ purple = #21145f
 }
 
 .day h3{
-	font-size: 1em;
+	font-size: 1rem;
 	font-family: 'Roboto Slab', serif;
+}
+
+.day p {
+	line-height: 1;
+	font-size: .9rem;
 }
 
 .word {

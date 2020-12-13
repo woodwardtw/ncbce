@@ -24,8 +24,9 @@ function ncbce_load_scripts() {
       $version= '1.0'; 
       $in_footer = true;    
       wp_enqueue_script('ncbce-plugin-js', plugin_dir_url( __FILE__) . 'js/ncbce-main.js', $deps, $version, $in_footer); 
+      wp_enqueue_script('ncbce-boot-js', plugin_dir_url( __FILE__) . 'js/bootstrap.bundle.js', $deps, $version, $in_footer); 
       wp_enqueue_style( 'ncbce-plugin', plugin_dir_url( __FILE__) . 'css/ncbce-main.css');
-      wp_enqueue_style( 'ncbce-boot', plugin_dir_url( __FILE__) . 'css/bootstrap-grid.min.css');
+      wp_enqueue_style( 'ncbce-boot', plugin_dir_url( __FILE__) . 'css/bootstrap.min.css');
     }
 }
 
