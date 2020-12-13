@@ -149,7 +149,7 @@ function ncbce_week_hdi(){
 function ncbce_week_knowledge(){
 	$html = '';
 	if( have_rows('essential_knowledge_block') ):
-		$html = '<div class="knowledge col-md-6 nc-section"><h2>Essential Knowledge</h2><ul>';
+		$html = '<div class="knowledge col-md-6 nc-section"><h2>Knowledge</h2><ul>';
 	    // Loop through rows.
 	    while( have_rows('essential_knowledge_block') ) : the_row();
 
@@ -170,7 +170,7 @@ function ncbce_week_knowledge(){
 function ncbce_week_skills(){
 	$html = '';
 	if( have_rows('essential_skills_block') ):
-		$html = '<div class="skills col-md-6 nc-section"><h2>Essential Skills</h2><ul>';
+		$html = '<div class="skills col-md-6 nc-section"><h2>Skills</h2><ul>';
 	    // Loop through rows.
 	    while( have_rows('essential_skills_block') ) : the_row();
 
