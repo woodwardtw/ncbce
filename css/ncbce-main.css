@@ -26,6 +26,7 @@ purple = #21145f
 	background-size: contain;
 	background-color: #fff;
 	border-top: 5px solid var(--light-gray);
+    border-bottom: 30px solid var(--main-orange);
 }
 
 
@@ -140,10 +141,25 @@ purple = #21145f
 
 
 /*weeks sidebar navigation*/
+.weeks-list {
+	padding-bottom: 300px;
+	background-image: url(../imgs/circuit_down.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center bottom;
+	border-top: 8px solid var(--main-purple);
+}
+
+.weeks-list h2 {
+	background-color: rgba(255,255,255,.95);
+	margin-bottom: 0;
+}
+
 .weeks-list ul {
 	list-style-position: outside;
 	list-style: none;
 	margin-left: 0;
+	background-color: rgba(255,255,255,.95);
 }
 
 .weeks-list li {
@@ -156,4 +172,11 @@ purple = #21145f
 	padding: 7px 14px;
 	display: block;
 	color: var(--main-purple);
+	font-weight: 700;
+	transition: all .3s;
+}
+
+.weeks-list li a:hover {
+	color: #fff;
+	background-color: var(--main-purple);
 }

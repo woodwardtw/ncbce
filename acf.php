@@ -276,7 +276,7 @@ function ncbce_week_resources(){
 
 
 function ncbce_rand_node(){
-	$url = plugin_dir_url( __FILE__) . '/imgs/';
+	$url = plugin_dir_url( __FILE__) . 'imgs/';
 	$number = rand(1,5);
 	return " style='background-image:url({$url}node-{$number}.svg)'";
 
