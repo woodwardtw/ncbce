@@ -63,7 +63,7 @@ function ncbce_week_questions(){
 	$node = ncbce_rand_node();
 	if( have_rows('essential_questions') ):
 	    // Loop through rows.
-	    $html = "<div class='essential-questions nc-section'><h2{$node}>Essential Questions</h2><ul>";
+	    $html = "<div class='essential-questions nc-section'><h2{$node}><span class='white-out'>Essential Questions</span></h2><ul>";
 	    while( have_rows('essential_questions') ) : the_row();
 
 	        // Load sub field value.
@@ -83,7 +83,7 @@ function ncbce_week_big_ideas(){
 	$node = ncbce_rand_node();
 	if (get_field('big_ideas')){
 		$ideas = get_field('big_ideas');
-		return "<div class='big-ideas nc-section'><h2{$node}>Big Ideas</h2> {$ideas}</div>";
+		return "<div class='big-ideas nc-section'><h2{$node}><span class='white-out'>Big Ideas</span></h2> {$ideas}</div>";
 	}
 }
 
@@ -92,7 +92,7 @@ function ncbce_week_lives(){
 	$node = ncbce_rand_node();
 	if (get_field('connections_to_students_lives')){
 		$connection = get_field('connections_to_students_lives');
-		return "<div class='lives nc-section'><h2{$node}>Connection to Student Lives</h2> {$connection}</div>";
+		return "<div class='lives nc-section'><h2{$node}><span class='white-out'>Connection to Student Lives</span></h2> {$connection}</div>";
 	}
 }
 
@@ -100,7 +100,7 @@ function ncbce_week_framing(){
 	$node = ncbce_rand_node();
 	if (get_field('framing_problem')){
 		$content = get_field('framing_problem');
-		return "<div class='framing nc-section'><h2{$node}>Framing Problem</h2> {$content}</div>";
+		return "<div class='framing nc-section'><h2{$node}><span class='white-out'>Framing Problem</span></h2> {$content}</div>";
 	}
 }
 
@@ -108,14 +108,14 @@ function ncbce_week_cornerstone(){
 	$node = ncbce_rand_node();
 	if (get_field('cornerstone_assessment')){
 		$content = wpautop(get_field('cornerstone_assessment'));
-		return "<div class='cornerstone nc-section'><h2{$node}>Cornerstone Assessment</h2>{$content}</div>";
+		return "<div class='cornerstone nc-section'><h2{$node}><span class='white-out'>Cornerstone Assessment</span></h2>{$content}</div>";
 	}
 }
 
 function ncbce_week_dpi(){
 	$node = ncbce_rand_node();
 	if(get_field('dpi_standards')){
-		$html = "<div class='dpi nc-section'><h2{$node}>DPI Standards</h2><ul>";
+		$html = "<div class='dpi nc-section'><h2{$node}><span class='white-out'>DPI Standards</span></h2><ul>";
 		$standards = get_field('dpi_standards');
 		foreach ($standards as $key => $standard) {
 			$html .= "<li>{$standard->name}</li>";
@@ -128,7 +128,7 @@ function ncbce_week_comptia(){
 	$node = ncbce_rand_node();
 	if( have_rows('comptia_domain_objectives') ):
 	    // Loop through rows.
-	    $html = "<div class='comptia nc-section'><h2{$node}>CompTIA Objectives</h2><ul>";
+	    $html = "<div class='comptia nc-section'><h2{$node}><span class='white-out'>CompTIA Objectives</span></h2><ul>";
 	    while( have_rows('comptia_domain_objectives') ) : the_row();
 
 	        // Load sub field value.
@@ -147,7 +147,7 @@ function ncbce_week_comptia(){
 function ncbce_week_hdi(){
 	$node = ncbce_rand_node();
 	if(get_field('hdi_competencies')){
-		$html = "<div class='hdi nc-section'><h2{$node}>HDI Standards</h2><ul>";
+		$html = "<div class='hdi nc-section'><h2{$node}><span class='white-out'>HDI Standards</span></h2><ul>";
 		$standards = get_field('hdi_competencies');	
 		foreach ($standards as $key => $standard) {
 			$html .= "<li>{$standard->name}</li>";
@@ -161,7 +161,7 @@ function ncbce_week_knowledge(){
 	$html = '';
 	$node = ncbce_rand_node();
 	if( have_rows('essential_knowledge_block') ):
-		$html = "<div class='knowledge col-md-6 nc-section'><h2{$node}>Knowledge</h2><ul>";
+		$html = "<div class='knowledge col-md-6 nc-section'><h2{$node}><span class='white-out'>Knowledge</span></h2><ul>";
 	    // Loop through rows.
 	    while( have_rows('essential_knowledge_block') ) : the_row();
 
@@ -183,7 +183,7 @@ function ncbce_week_skills(){
 	$html = '';
 	$node = ncbce_rand_node();
 	if( have_rows('essential_skills_block') ):
-		$html = "<div class='skills col-md-6 nc-section'><h2{$node}>Skills</h2><ul>";
+		$html = "<div class='skills col-md-6 nc-section'><h2{$node}><span class='white-out'>Skills</span></h2><ul>";
 	    // Loop through rows.
 	    while( have_rows('essential_skills_block') ) : the_row();
 
@@ -204,7 +204,7 @@ function ncbce_week_vocab(){
 	$html = '';
 	$node = ncbce_rand_node();
 	if( have_rows('vocabulary') ):
-		$html = "<div class='vocabulary nc-section'><h2{$node}>Vocabulary</h2><ul>";
+		$html = "<div class='vocabulary nc-section'><h2{$node}><span class='white-out'>Vocabulary</span></h2><ul>";
 	    // Loop through rows.
 	    while( have_rows('vocabulary') ) : the_row();
 
@@ -227,7 +227,7 @@ function ncbce_week_supporting_vocab(){
 	$html = '';
 	$node = ncbce_rand_node();
 	if( have_rows('supporting_vocabulary') ):
-		$html = "<div class='supporting-vocabulary nc-section'><h2 {$node}>Supporting Vocabulary</h2><ul>";
+		$html = "<div class='supporting-vocabulary nc-section'><h2 {$node}><span class='white-out'>Supporting Vocabulary</span></h2><ul>";
 	    // Loop through rows.
 	    while( have_rows('supporting_vocabulary') ) : the_row();
 
@@ -253,14 +253,14 @@ function ncbce_week_weekly_map(){
 		$wed = "<div class='day col'><h3>Wednesday</h3>{$map['wednesday']}</div>";
 		$thurs = "<div class='day col'><h3>Thursday</h3>{$map['thursday']}</div>";
 		$fri = "<div class='day col'><h3>Friday</h3>{$map['friday']}</div>";
-		return "<div class='col-md-12'><h2{$node}>Weekly Map</h2></div>" .$mon . $tues . $wed . $thurs . $fri; 
+		return "<div class='col-md-12'><h2{$node}><span class='white-out'>Weekly Map</span></h2></div>" .$mon . $tues . $wed . $thurs . $fri; 
 	}
 
 }
 
 function ncbce_week_lessons(){
 	$node = ncbce_rand_node();
-	$html = "<div class='lessons nc-section'><h2{$node}>Lesson Ideas</h2>";
+	$html = "<div class='lessons nc-section'><h2{$node}><span class='white-out'>Lesson Ideas</span></h2>";
 	if(get_field('lesson_ideas')){
 		return $html . get_field('lesson_ideas') . "</div>";
 	}
@@ -268,7 +268,7 @@ function ncbce_week_lessons(){
 
 function ncbce_week_resources(){
 	$node = ncbce_rand_node();
-	$html = "<div class='resources nc-section'><h2{$node}>Potential Resources</h2>";
+	$html = "<div class='resources nc-section'><h2{$node}><span class='white-out'>Potential Resources</span></h2>";
 	if(get_field('potential_resources')){
 		return $html . get_field('potential_resources') . "</div>";
 	}
