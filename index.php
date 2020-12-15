@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 add_action( 'wp_footer', 'ncbce_load_scripts' );
 
 function ncbce_load_scripts() {  
-  if ( 'unit' === get_post_type() || 'week' === get_post_type() ) {                         
+  if ( 'unit' === get_post_type() || 'week' === get_post_type() || 'narrative' === get_post_type() ) {                         
       $deps = array('jquery');
       $version= '1.0'; 
       $in_footer = true;    
@@ -51,12 +51,22 @@ function ncbce_load_templates( $template ) {
 
     if ( 'week' === $post->post_type && locate_template( array( 'single-week.php' ) ) !== $template ) {
         /*
-         * This is a 'unit' post
-         * AND a 'single unit template' is not found on
+         * This is a 'week' post
+         * AND a 'single week template' is not found on
          * theme or child theme directories, so load it
          * from our plugin directory.
          */
         return plugin_dir_path( __FILE__ ) . 'single-week.php';
+    }
+
+    if ( 'narrative' === $post->post_type && locate_template( array( 'single-narrative.php' ) ) !== $template ) {
+        /*
+         * This is a 'narrative' post
+         * AND a 'single narrative template' is not found on
+         * theme or child theme directories, so load it
+         * from our plugin directory.
+         */
+        return plugin_dir_path( __FILE__ ) . 'single-narrative.php';
     }
 
     return $template;

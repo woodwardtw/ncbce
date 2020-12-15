@@ -32,30 +32,30 @@ purple = #21145f
 }
 
 
-.week, .unit {
+.week, .unit, .narrative {
 	font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.8;
 }
 
-.week a, .unit a {
+.week a, .unit a, .narrative a {
 	color: var(--main-purple);
 	font-weight: 600;
 }
 
-.week h1, .unit h1 {
+.week h1, .unit h1, .narrative h1 {
 	font-family: 'Roboto Slab', serif;
 	color: var(--main-purple);
 }
 
 /*list items*/
-.week ul, .unit ul{
+.week ul, .unit ul, .narrative ul{
 	list-style-position: outside;
 	list-style: none;
 }
 
 
-.week li::before, .unit li::before{
+.week li::before, .unit li::before, .narrative li::before{
    content: '';
    display: inline-block;
    height: 20px;
@@ -65,7 +65,7 @@ purple = #21145f
 }
 
 
-.week li, .unit li {
+.week li, .unit li, .narrative li {
 	line-height: 1;
 	font-size: 1.2rem;
 	margin-bottom: 15px;

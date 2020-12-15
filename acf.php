@@ -287,7 +287,12 @@ function ncbce_rand_node(){
 NARRATIVE SPECIFIC
 */
 
-
+function ncbce_intro(){
+	if(get_field('introduction')){
+		$intro = get_field('introduction');
+		return "<div class='ncbce-intro nc-section'>$intro</div>";
+	}
+}
 
 
 //sort alpha for supporting vocabulary
