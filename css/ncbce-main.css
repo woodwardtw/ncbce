@@ -24,7 +24,7 @@ purple = #21145f
 	display: none;
 }
 
-.single-week .intro-container, .single-unit .intro-container {
+.single-week .intro-container, .single-unit .intro-container, .single-narrative .intro-container {
 	background-size: contain;
 	background-color: #fff;
 	border-top: 5px solid var(--light-gray);
@@ -41,6 +41,10 @@ purple = #21145f
 .week a, .unit a, .narrative a {
 	color: var(--main-purple);
 	font-weight: 600;
+}
+
+.week a:hover, .unit a:hover, .narrative a:hover {
+	color: var(--dark-gray);
 }
 
 .week h1, .unit h1, .narrative h1 {
@@ -95,7 +99,7 @@ purple = #21145f
 	font-family: 'Roboto Slab', serif;
 	font-size: 1.6rem;
 	margin-top: 20px;
-	text-align: center;
+	text-align: left;
 	width: 100%;
 	color: var(--main-purple);
 }
@@ -201,3 +205,22 @@ purple = #21145f
 	color: #fff;
 	background-color: var(--main-purple);
 }
+
+/*
+narrative stuff
+*/
+
+.cycle-nav h3{
+	font-size: 3rem;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.cycle-nav.row {
+	border-bottom: 3px solid var(--main-orange);
+	border-bottom-right-radius: 20px;
+	box-shadow: 2px 2px 15px -7px #000000;
+	margin-bottom: 25px;
+	padding-bottom: 20px;
+}
+
