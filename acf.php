@@ -295,6 +295,71 @@ function ncbce_intro(){
 }
 
 
+function ncbce_steps_repeater(){
+	$html = '';
+	if( have_rows('steps') ):
+
+	    // Loop through rows.
+	    while( have_rows('steps') ) : the_row();
+	    	$title = '';
+	    	$content = '';
+	        // Load sub field value.
+	        if(get_sub_field('step_title')){
+	        	$title = get_sub_field('step_title');
+	        }
+	        if(get_sub_field('step_content')){
+	        	$content = get_sub_field('step_content');
+	        }
+
+	        $html .= "<div class='steps nc-section'><h3>{$title}</h3><div class='step-content'>{$content}</div>";
+	        // Do something...
+	    // End loop.
+	    endwhile;
+	    return $html;
+		// No value.
+		else :
+		    // Do something...
+		endif;
+	}
+
+
+function ncbce_nar_resources_repeater(){
+	$html = "<div class='nc-section nar-resources'><h2>Helpful Articles and Resources</h2>";
+	if( have_rows('resources') ):
+
+	    // Loop through rows.
+	    while( have_rows('resources') ) : the_row();
+	    	$title = '';
+	    	$url = '';
+	    	$description = '';
+	    	if (get_sub_field('resource_title')){
+	    		$title = get_sub_field('resource_title');
+	    	}
+	    	if (get_sub_field('resource_description')){
+	    		$description = get_sub_field('resource_description');
+	    	}
+	    	if (get_sub_field('resource_link')){
+	    		$url = get_sub_field('resource_link');
+	    		$title = "<a href='{$url}'>{$title}</a>";
+	    	}
+	    	$html .= "<div class='nar-resource'><h3>{$title}</h3>";
+	    // End loop.
+	    endwhile;
+	    return $html . "</div>";
+		// No value.
+		else :
+		    // Do something...
+		endif;
+	}
+
+
+
+
+/*
+GENERIC TOOLS 
+
+*/
+
 //sort alpha for supporting vocabulary
 function sort_extra_vocab_alpha( $value, $post_id, $field ) {
 	

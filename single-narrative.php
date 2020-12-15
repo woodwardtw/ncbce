@@ -24,6 +24,7 @@ get_header();
 
 		<?php
 			echo ncbce_intro();
+			echo ncbce_steps_repeater();
 			//the_content(); ?>
 
 	</div>
