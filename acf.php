@@ -296,7 +296,8 @@ function ncbce_intro(){
 
 
 function ncbce_steps_repeater(){
-	$html = '';
+	$node = ncbce_rand_node();
+	$html = "<div class='steps-block nc-section'><h2{$node}><span class='white-out'>Key Steps</span></h2>";
 	if( have_rows('steps') ):
 
 	    // Loop through rows.
@@ -311,11 +312,11 @@ function ncbce_steps_repeater(){
 	        	$content = get_sub_field('step_content');
 	        }
 
-	        $html .= "<div class='steps nc-section'><h3>{$title}</h3><div class='step-content'>{$content}</div>";
+	        $html .= "<div class='steps nc-section'><h3>{$title}</h3><div class='step-content'>{$content}</div></div>";
 	        // Do something...
 	    // End loop.
 	    endwhile;
-	    return $html;
+	    return $html ."</div>";
 		// No value.
 		else :
 		    // Do something...
@@ -324,7 +325,8 @@ function ncbce_steps_repeater(){
 
 
 function ncbce_nar_resources_repeater(){
-	$html = "<div class='nc-section nar-resources'><h2>Helpful Articles and Resources</h2>";
+	$node = ncbce_rand_node();
+	$html = "<div class='nc-section nar-resources'><h2{$node}><span class='white-out'>Helpful Articles and Resources</span></h2>";
 	if( have_rows('resources') ):
 
 	    // Loop through rows.
@@ -336,13 +338,13 @@ function ncbce_nar_resources_repeater(){
 	    		$title = get_sub_field('resource_title');
 	    	}
 	    	if (get_sub_field('resource_description')){
-	    		$description = get_sub_field('resource_description');
+	    		$description = ' - ' . get_sub_field('resource_description');
 	    	}
 	    	if (get_sub_field('resource_link')){
 	    		$url = get_sub_field('resource_link');
 	    		$title = "<a href='{$url}'>{$title}</a>";
 	    	}
-	    	$html .= "<div class='nar-resource'><h3>{$title}</h3>";
+	    	$html .= "<div class='nar-resource'><div class='nar-resource-title'>{$title}</div><div class='nar-resource-desc'>{$description}</div>";
 	    // End loop.
 	    endwhile;
 	    return $html . "</div>";

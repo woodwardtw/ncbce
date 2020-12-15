@@ -223,3 +223,8 @@ narrative stuff
 	padding-bottom: 20px;
 }
 
+
+.steps-block {
+	box-shadow: 2px 2px 15px -7px #000000;
+	padding: 20px 30px;
+}

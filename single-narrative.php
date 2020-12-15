@@ -25,6 +25,7 @@ get_header();
 		<?php
 			echo ncbce_intro();
 			echo ncbce_steps_repeater();
+			echo ncbce_nar_resources_repeater();
 			//the_content(); ?>
 
 	</div>
