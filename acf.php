@@ -14,7 +14,7 @@ function ncbce_unit_description(){
 	$node = ncbce_rand_node();
 	if(get_field('unit_description')){
 		$description = get_field('unit_description');
-		$html = "<div class='unit-description nc-section'><h2{$node}>Unit Description</h2>{$description}</div>";
+		$html = "<div class='unit-description nc-section'><h2{$node}><span class='white-out'>Unit Description</span></h2>{$description}</div>";
 		return $html;
 	}
 }
@@ -25,7 +25,7 @@ function ncbce_unit_weeks(){
 	$node = ncbce_rand_node();
 	$weeks = get_field('weeks');
 	$html = '<div class="instructional-time nc-section">';
-	$html .= "<h2{$node}>Instructional Time</h2><div class='weekly-total'>" . sizeof($weeks) . " weeks</div><ul>";
+	$html .= "<h2{$node}><span class='white-out'>Instructional Time</span></h2><div class='weekly-total'>" . sizeof($weeks) . " weeks</div><ul>";
 	if( $weeks ): 
 	    foreach( $weeks as $key=>$week ): 
 	    	$permalink = get_permalink( $week );
@@ -45,7 +45,7 @@ function ncbce_unit_weeks(){
 
 function ncbce_unit_map(){
 	$node = ncbce_rand_node();
-	$html = "<div class='weekly-map nc-section'><h2{$node}>Weekly Map</h2>";
+	$html = "<div class='weekly-map nc-section'><h2{$node}><span class='white-out'>Weekly Map</span></h2>";
 	$map = get_field('general_weekly_map');
 	//var_dump($map);
 	$mon = "<div class='day'><h3>Monday</h3>{$map['monday']}</div>"; //<div class='mon'><h3>Monday</h3>

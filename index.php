@@ -33,7 +33,7 @@ function ncbce_load_scripts() {
 
 
 require_once( plugin_dir_path( __FILE__ ) . 'acf.php');//acf specific code
-require_once( plugin_dir_path( __FILE__ ) . 'custom-fields.php');//custom post types specific code
+require_once( plugin_dir_path( __FILE__ ) . 'custom-post-types.php');//custom post types specific code
 require_once( plugin_dir_path( __FILE__ ) . 'custom-taxonomy.php');//custom taxonomy specific code
 
 function ncbce_load_templates( $template ) {
@@ -63,6 +63,16 @@ function ncbce_load_templates( $template ) {
 }
 
 add_filter( 'single_template', 'ncbce_load_templates' );
+
+
+
+//LOAD ADMIN CSS
+function ncbce_custom_wp_admin_style(){
+    wp_register_style( 'ncbce-admin-css', plugin_dir_url( __FILE__) . 'css/ncbce-admin.css', false, '1.0.0' );
+    wp_enqueue_style( 'ncbce-admin-css' );
+}
+add_action('admin_enqueue_scripts', 'ncbce_custom_wp_admin_style');
+
 
 /*
 UNIT AND WEEK NAVIGATION
@@ -108,7 +118,7 @@ function ncbce_unit_navigation(){
       global $post;
       $weeks = get_field('weeks', $id);
       if( $weeks ){
-          $html = '<div class="weeks-list"><h2>Weeks</h2><ul>';
+          $html = "<div class='weeks-list'><h2><span class='white-out'>Weeks</span></h2><ul>";
           foreach( $weeks as $key=>$week ): 
             $number = $key+1;
             $link = get_the_permalink($week);
@@ -141,5 +151,35 @@ if ( ! function_exists('write_log')) {
       }
    }
 }
+
+
+//STRIP GOOGLE docs cut/paste formatting
+//fix cut paste drama from https://jonathannicol.com/blog/2015/02/19/clean-pasted-text-in-wordpress/
+add_filter('tiny_mce_before_init','configure_tinymce');
+
+/**
+ * Customize TinyMCE's configuration
+ *
+ * @param   array
+ * @return  array
+ */
+function configure_tinymce($in) {
+  $in['paste_preprocess'] = "function(plugin, args){
+    // Strip all HTML tags except those we have whitelisted
+    var whitelist = 'p,b,strong,i,em,h2,h3,h4,h5,h6,ul,li,ol,a,href';
+    var stripped = jQuery('<div>' + args.content + '</div>');
+    var els = stripped.find('*').not(whitelist);
+    for (var i = els.length - 1; i >= 0; i--) {
+      var e = els[i];
+      jQuery(e).replaceWith(e.innerHTML);
+    }
+    // Strip all class and id attributes
+    stripped.find('*').removeAttr('id').removeAttr('class').removeAttr('style');
+    // Return the clean HTML
+    args.content = stripped.html();
+  }";
+  return $in;
+}
+
 
   //print("<pre>".print_r($a,true)."</pre>");

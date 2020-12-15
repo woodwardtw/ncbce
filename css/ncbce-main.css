@@ -11,6 +11,8 @@ purple = #21145f
   --main-purple: #21145f;
   --light-gray: #efefef;
   --dark-gray: #424242;
+  --teal: #14495f;
+  --navy: #0e3343;
 }
 
 
@@ -22,7 +24,7 @@ purple = #21145f
 	display: none;
 }
 
-.single-week .intro-container {
+.single-week .intro-container, .single-unit .intro-container {
 	background-size: contain;
 	background-color: #fff;
 	border-top: 5px solid var(--light-gray);
@@ -78,7 +80,6 @@ purple = #21145f
 .nc-section h2, .weeks-list h2 {
 	font-family: 'Roboto Slab', serif;
 	font-size: 2rem;
-	color: var(--main-orange);
 	margin-top: 20px;
 	text-align: left;
 	width: 100%;
@@ -92,7 +93,7 @@ purple = #21145f
 .white-out {
 	font-family: 'Roboto Slab', serif;
 	font-size: 2rem;
-	color: var(--main-orange);
+	color: var(--main-purple);
 	background-color: #efefef;
 	padding: 10px 20px;
 /*	border-right: 4px solid var(--light-gray);
@@ -150,12 +151,14 @@ purple = #21145f
 
 /*weeks sidebar navigation*/
 .weeks-list {
-	padding-bottom: 300px;
 	background-image: url(../imgs/circuit_down.svg);
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center bottom;
 	border-top: 8px solid var(--main-purple);
+	box-shadow: 2px 2px 15px -7px #000000;
+	padding: 0 15px 300px 15px;
+	border-bottom: 5px solid #fff;
 }
 
 .weeks-list h2 {

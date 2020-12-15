@@ -32,8 +32,8 @@ get_header();
 			echo ncbce_week_hdi();
 		 ?>			
 		 <div class="essentials row nc-section">
-		 	<h2<?php echo ncbce_rand_node();?>>Essentials</h2>
-		 	<?php echo ncbce_week_knowledge();?>
+<!-- 		 	<h2<?php //echo ncbce_rand_node();?>>Essentials</h2>
+ -->		 	<?php echo ncbce_week_knowledge();?>
 		 	<?php echo ncbce_week_skills();?>
 		 </div>
 		 <?php echo ncbce_week_vocab();?>

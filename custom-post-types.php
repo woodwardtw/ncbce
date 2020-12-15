@@ -44,13 +44,12 @@ function create_unit_cpt() {
     'label' => __( 'unit', 'textdomain' ),
     'description' => __( '', 'textdomain' ),
     'labels' => $labels,
-    'menu_icon' => '',
     'supports' => array('title', 'editor', 'revisions', 'author', 'trackbacks', 'custom-fields', 'thumbnail',),
     'taxonomies' => array('category', 'post_tag'),
     'public' => true,
     'show_ui' => true,
     'show_in_menu' => true,
-    'menu_position' => 5,
+    'menu_position' => 100,
     'show_in_admin_bar' => true,
     'show_in_nav_menus' => true,
     'can_export' => true,
@@ -60,7 +59,7 @@ function create_unit_cpt() {
     'show_in_rest' => true,
     'publicly_queryable' => true,
     'capability_type' => 'post',
-    'menu_icon' => 'dashicons-universal-access-alt',
+    'menu_icon' => 'dashicons-database',
   );
   register_post_type( 'unit', $args );
   
@@ -111,13 +110,12 @@ function create_week_cpt() {
     'label' => __( 'week', 'textdomain' ),
     'description' => __( '', 'textdomain' ),
     'labels' => $labels,
-    'menu_icon' => '',
     'supports' => array('title', 'editor', 'revisions', 'author', 'trackbacks', 'custom-fields', 'thumbnail',),
     'taxonomies' => array('category', 'post_tag'),
     'public' => true,
     'show_ui' => true,
     'show_in_menu' => true,
-    'menu_position' => 5,
+    'menu_position' => 100,
     'show_in_admin_bar' => true,
     'show_in_nav_menus' => true,
     'can_export' => true,
@@ -127,7 +125,7 @@ function create_week_cpt() {
     'show_in_rest' => true,
     'publicly_queryable' => true,
     'capability_type' => 'post',
-    'menu_icon' => 'dashicons-universal-access-alt',
+    'menu_icon' => 'dashicons-calendar-alt',
   );
   register_post_type( 'week', $args );
   
