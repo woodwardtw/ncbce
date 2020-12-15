@@ -20,7 +20,7 @@ purple = #21145f
 	font-family: 'Roboto Slab', serif;
 }
 
-.single-week h3.entry-title.h1, .single-unit h3.entry-title.h1 {
+.single-week h3.entry-title.h1, .single-unit h3.entry-title.h1, .single-narrative h3.entry-title.h1 {
 	display: none;
 }
 
@@ -88,6 +88,16 @@ purple = #21145f
 	background-position: top 0 right 0;
 	background-size: contain;
 	padding-top: 15px;
+	color: var(--main-purple);
+}
+
+.nc-section h3 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 1.6rem;
+	margin-top: 20px;
+	text-align: center;
+	width: 100%;
+	color: var(--main-purple);
 }
 
 .white-out {
