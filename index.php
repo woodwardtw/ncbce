@@ -117,6 +117,7 @@ function ncbce_unit_navigation(){
       /* Restore original Post Data */
       wp_reset_postdata();
     }
+    return nbce_nar_icon($post->ID);
 
 }
 

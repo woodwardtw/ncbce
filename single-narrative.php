@@ -19,7 +19,9 @@ get_header();
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="narrative">
-	<h1><?php the_title();?></h1>
+	<div class="narrative-icon">
+		<h1><?php the_title();?></h1>
+	</div>
 	<div class="entry-content">
 
 		<?php

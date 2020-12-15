@@ -70,7 +70,7 @@ purple = #21145f
 
 
 .week li, .unit li, .narrative li {
-	line-height: 1;
+	line-height: 1.2;
 	font-size: 1.2rem;
 	margin-bottom: 15px;
 	text-indent: -25px;

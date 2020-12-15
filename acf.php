@@ -287,6 +287,15 @@ function ncbce_rand_node(){
 NARRATIVE SPECIFIC
 */
 
+function nbce_nar_icon($id){
+	$the_title = get_the_title($id);
+	if(get_field('icon', $id)){
+		$img = get_field('icon', $id);
+		return "<img class='img-fluid nar-icon' src='{$img}' alt='Icon for {$the_title}'>";
+
+	}
+}
+
 function ncbce_intro(){
 	if(get_field('introduction')){
 		$intro = get_field('introduction');
