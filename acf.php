@@ -283,6 +283,13 @@ function ncbce_rand_node(){
 }
 
 
+/*
+NARRATIVE SPECIFIC
+*/
+
+
+
+
 //sort alpha for supporting vocabulary
 function sort_extra_vocab_alpha( $value, $post_id, $field ) {
 	
