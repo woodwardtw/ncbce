@@ -163,6 +163,31 @@ function ncbce_unit_navigation(){
 add_shortcode( 'list-weeks', 'ncbce_unit_navigation' );
 
 
+  
+//get profile
+    function ncbce_get_profiles(){
+      global $post;
+      $id = $post->ID;
+      $profiles = get_field('profiles', $id);
+      var_dump($profiles);
+      if( $profiles ){
+          $html = "<div class='profiles-list'><h2><span class='white-out'>Profiles</span></h2><ul>";
+          foreach( $profiles as $key=>$profile ): 
+            $number = $key+1;
+            $link = get_the_permalink($profile);
+            $title = get_the_title($profile);           
+              // Setup this post for WP functions (variable must be named $post).
+              $html .= "<li><a href='{$link}'>{$title}</a></li>";
+          endforeach;
+          return $html . '</ul></div>';
+      } 
+          // Reset the global post object so that the rest of the page works correctly.
+          wp_reset_postdata(); 
+    }
+
+add_shortcode( 'list-profiles', 'ncbce_get_profiles' );
+
+
 //LOGGER -- like frogger but more useful
 
 if ( ! function_exists('write_log')) {
