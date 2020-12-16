@@ -22,8 +22,10 @@ get_header();
 	<h1><?php the_title();?></h1>
 	<div class="entry-content">
 		<?php
-			echo ncbce_profile_mission();
 			echo ncbce_profile_opps();
+			echo ncbce_profile_mission();
+			echo nbce_profile_employees();
+			echo nbce_profile_contact();
 		 ?>			
 
 </article>

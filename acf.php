@@ -126,22 +126,14 @@ function ncbce_week_dpi(){
 
 function ncbce_week_comptia(){
 	$node = ncbce_rand_node();
-	if( have_rows('comptia_domain_objectives') ):
-	    // Loop through rows.
-	    $html = "<div class='comptia nc-section'><h2{$node}><span class='white-out'>CompTIA Objectives</span></h2><ul>";
-	    while( have_rows('comptia_domain_objectives') ) : the_row();
-
-	        // Load sub field value.
-	        $html .= '<li>' . get_sub_field('objective') . '</li>';
-	        
-	        // Do something...
-	    // End loop.
-	    endwhile;
-	    return $html . '</ul></div>';
-		// No value.
-		else :
-		    // Do something...
-		endif;
+	if(get_field('comptia_domain_objectives')){
+		$html = "<div class='comptia nc-section'><h2{$node}><span class='white-out'>CompTIA Standards</span></h2><ul>";
+		$standards = get_field('comptia_domain_objectives');
+		foreach ($standards as $key => $standard) {
+			$html .= "<li>{$standard->name}</li>";
+		}
+		return $html . '</ul></div>';
+	}
 }
 
 function ncbce_week_hdi(){
@@ -388,6 +380,24 @@ function ncbce_profile_opps(){
 	}
 }
 
+function nbce_profile_employees(){
+	$node = ncbce_rand_node();
+	if(get_field('employees')){
+		$num = get_field('employees');
+		$html = "<div class='employees nc-section'><h2{$node}><span class='white-out'>NC-Based Employees: {$num}</span></h2>";
+		return $html;
+	}
+}
+
+function nbce_profile_contact(){
+	$node = ncbce_rand_node();
+	$title = get_the_title();
+	if(get_field('connect')){
+		$contact = get_field('connect');
+		$html = "<div class='contact nc-section'><h2{$node}><span class='white-out'>Connect with {$title}</span></h2>{$contact}";
+		return $html;
+	}
+}
 
 /*
 GENERIC TOOLS 
