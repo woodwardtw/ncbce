@@ -375,6 +375,20 @@ function ncbce_profile_mission(){
 	}
 }
 
+
+function ncbce_profile_opps(){
+	$node = ncbce_rand_node();
+	if(get_field('opportunities')){
+		$html = "<div class='opportunities nc-section'><h2{$node}><span class='white-out'>Collaboration Opportunities</span></h2><ul>";
+		$standards = get_field('opportunities');	
+		foreach ($standards as $key => $standard) {
+			$html .= "<li>{$standard->name}</li>";
+		}
+		return $html . '</ul></div>';
+	}
+}
+
+
 /*
 GENERIC TOOLS 
 

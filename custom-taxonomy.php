@@ -136,7 +136,7 @@ function ncbce_opp_tax() {
 		'parent_item'                => __( 'Parent Item', 'text_domain' ),
 		'parent_item_colon'          => __( 'Parent Item:', 'text_domain' ),
 		'new_item_name'              => __( 'New Level', 'text_domain' ),
-		'add_new_item'               => __( 'Add New Level', 'text_domain' ),
+		'add_new_item'               => __( 'Add New Opportunity', 'text_domain' ),
 		'edit_item'                  => __( 'Edit Item', 'text_domain' ),
 		'update_item'                => __( 'Update Item', 'text_domain' ),
 		'view_item'                  => __( 'View Item', 'text_domain' ),

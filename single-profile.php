@@ -23,6 +23,7 @@ get_header();
 	<div class="entry-content">
 		<?php
 			echo ncbce_profile_mission();
+			echo ncbce_profile_opps();
 		 ?>			
 
 </article>
