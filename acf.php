@@ -25,7 +25,7 @@ function ncbce_unit_weeks(){
 	$node = ncbce_rand_node();
 	$weeks = get_field('weeks');
 	$html = '<div class="instructional-time nc-section">';
-	$html .= "<h2{$node}><span class='white-out'>Instructional Time</span></h2><div class='weekly-total'>" . sizeof($weeks) . " weeks</div><ul>";
+	$html .= "<h2{$node}><span class='white-out'>Instructional Time</span></h2><div class='weekly-total'><h3>" . sizeof($weeks) . " weeks</h3></div><ul>";
 	if( $weeks ): 
 	    foreach( $weeks as $key=>$week ): 
 	    	$permalink = get_permalink( $week );
@@ -245,7 +245,7 @@ function ncbce_week_weekly_map(){
 		$wed = "<div class='day col'><h3>Wednesday</h3>{$map['wednesday']}</div>";
 		$thurs = "<div class='day col'><h3>Thursday</h3>{$map['thursday']}</div>";
 		$fri = "<div class='day col'><h3>Friday</h3>{$map['friday']}</div>";
-		return "<div class='col-md-12'><h2{$node}><span class='white-out'>Weekly Map</span></h2></div>" .$mon . $tues . $wed . $thurs . $fri; 
+		return "<div class='col-md-12'><h2{$node}><span class='white-out'>Weekly Map</span></h2></div></div><div class='row nc-section'>" .$mon . $tues . $wed . $thurs . $fri; 
 	}
 
 }
