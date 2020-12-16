@@ -363,8 +363,17 @@ function ncbce_nar_resources_repeater(){
 		endif;
 	}
 
+/*
+Business profile specifics 
+*/
 
-
+function ncbce_profile_mission(){
+	$node = ncbce_rand_node();
+	if(get_field('mission')){
+		$mission = get_field('mission');
+		return "<div class='mission nc-section'><h2{$node}><span class='white-out'>Mission, Vision, Values</span></h2>{$mission}</div>";
+	}
+}
 
 /*
 GENERIC TOOLS 

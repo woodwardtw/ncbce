@@ -22,7 +22,7 @@ get_header();
 	<h1><?php the_title();?></h1>
 	<div class="entry-content">
 		<?php
-			echo 'profile';
+			echo ncbce_profile_mission();
 		 ?>			
 
 </article>

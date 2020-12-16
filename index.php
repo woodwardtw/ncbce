@@ -168,24 +168,26 @@ add_shortcode( 'list-weeks', 'ncbce_unit_navigation' );
     function ncbce_get_profiles(){
       global $post;
       $id = $post->ID;
+      $node = ncbce_rand_node();
       $profiles = get_field('profiles', $id);
-      var_dump($profiles);
       if( $profiles ){
-          $html = "<div class='profiles-list'><h2><span class='white-out'>Profiles</span></h2><ul>";
+          $html = "<div class='b-profiles-list row'><h2{$node}><span class='white-out'>NC Connect - Industry Partnerships 
+</span></h2>";
           foreach( $profiles as $key=>$profile ): 
             $number = $key+1;
             $link = get_the_permalink($profile);
-            $title = get_the_title($profile);           
+            $title = get_the_title($profile);  
+            $img = get_the_post_thumbnail_url($profile);         
               // Setup this post for WP functions (variable must be named $post).
-              $html .= "<li><a href='{$link}'>{$title}</a></li>";
+              $html .= "<div class='b-partner col-md-3'><a href='{$link}'><div class='card'><img class='img-fluid' src='{$img}' alt='{$title} logo.'>{$title}</a></div></div>";
           endforeach;
-          return $html . '</ul></div>';
+          return $html . '</div>';
       } 
           // Reset the global post object so that the rest of the page works correctly.
           wp_reset_postdata(); 
     }
 
-add_shortcode( 'list-profiles', 'ncbce_get_profiles' );
+add_shortcode( 'list-biz-profiles', 'ncbce_get_profiles' );
 
 
 //LOGGER -- like frogger but more useful

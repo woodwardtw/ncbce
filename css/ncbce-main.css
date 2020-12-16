@@ -85,7 +85,6 @@ purple = #21145f
 
 .nc-section h2, .weeks-list h2 {
 	font-family: 'Roboto Slab', serif;
-	font-size: 2rem;
 	margin-top: 20px;
 	text-align: left;
 	width: 100%;
@@ -93,7 +92,6 @@ purple = #21145f
 */	background-repeat: no-repeat;
 	background-position: top 0 right 0;
 	background-size: contain;
-	padding-top: 15px;
 	color: var(--main-purple);
 }
 
@@ -112,6 +110,8 @@ purple = #21145f
 	color: var(--main-purple);
 	background-color: #efefef;
 	padding: 10px 20px;
+	display: inline-block;
+	line-height: 1;
 /*	border-right: 4px solid var(--light-gray);
 */}
 
@@ -161,7 +161,12 @@ purple = #21145f
 .weeks-list li.here {
 	margin-left: 10px;
 	border-left: 5px solid var(--main-orange);
-	background-color: var(--light-gray);
+	background-color: var(--main-purple);
+	color: #fff;
+}
+
+.weeks-list li.here a {
+	color: #fff;
 }
 
 
@@ -254,4 +259,22 @@ narrative stuff
 .objective {
   background-color: var(--light-gray);
   padding: 10px 15px;
+}
+
+/*business partners*/
+.b-partner {
+	margin-top: 20px;
+}
+.b-partner a {
+	color: var(--dark-gray);
+	text-align: center;
+}
+
+.b-partner .card {
+	padding-top: 10px;
+	transition: all .3s;
+}
+
+.b-partner .card:hover {
+	border: 1px solid var(--dark-gray);
 }
