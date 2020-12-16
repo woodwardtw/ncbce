@@ -20,46 +20,46 @@ purple = #21145f
 	font-family: 'Roboto Slab', serif;
 }
 
-.single-week h3.entry-title.h1, .single-unit h3.entry-title.h1, .single-narrative h3.entry-title.h1 {
+/*every cpt*/
+.single-week h3.entry-title.h1, .single-unit h3.entry-title.h1, .single-narrative h3.entry-title.h1, .single-profile h3.entry-title.h1  {
 	display: none;
 }
 
-.single-week .intro-container, .single-unit .intro-container, .single-narrative .intro-container {
+.single-week .intro-container, .single-unit .intro-container, .single-narrative .intro-container, .single-profile .intro-container {
 	background-size: contain;
 	background-color: #fff;
 	border-top: 5px solid var(--light-gray);
     border-bottom: 30px solid var(--main-orange);
 }
 
-
-.week, .unit, .narrative {
+.week, .unit, .narrative, .profile {
 	font-weight: 400;
     font-size: 1.2rem;
     line-height: 1.8;
 }
 
-.week a, .unit a, .narrative a {
+.week a, .unit a, .narrative a, .profile a {
 	color: var(--main-purple);
 	font-weight: 600;
 }
 
-.week a:hover, .unit a:hover, .narrative a:hover {
+.week a:hover, .unit a:hover, .narrative a:hover , .profile a:hover {
 	color: var(--dark-gray);
 }
 
-.week h1, .unit h1, .narrative h1 {
+.week h1, .unit h1, .narrative h1, .profile h1 {
 	font-family: 'Roboto Slab', serif;
 	color: var(--main-purple);
 }
 
 /*list items*/
-.week ul, .unit ul, .narrative ul{
+.week ul, .unit ul, .narrative ul, .profile ul{
 	list-style-position: outside;
 	list-style: none;
 }
 
 
-.week li::before, .unit li::before, .narrative li::before{
+.week li::before, .unit li::before, .narrative li::before, .profile li::before{
    content: '';
    display: inline-block;
    height: 20px;
@@ -69,13 +69,15 @@ purple = #21145f
 }
 
 
-.week li, .unit li, .narrative li {
+.week li, .unit li, .narrative li, .profile li {
 	line-height: 1.2;
 	font-size: 1.2rem;
 	margin-bottom: 15px;
 	text-indent: -25px;
 }
 
+
+/*end every cpt*/
 
 .nc-section {
 	margin-top: 50px;

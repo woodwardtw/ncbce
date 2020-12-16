@@ -19,7 +19,8 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 add_action( 'wp_footer', 'ncbce_load_scripts' );
 
 function ncbce_load_scripts() {  
-  if ( 'unit' === get_post_type() || 'week' === get_post_type() || 'narrative' === get_post_type() ) {                         
+  //add for every cpt
+  if ( 'unit' === get_post_type() || 'week' === get_post_type() || 'narrative' === get_post_type() || 'profile' === get_post_type() ) {                         
       $deps = array('jquery');
       $version= '1.0'; 
       $in_footer = true;    
@@ -36,6 +37,7 @@ require_once( plugin_dir_path( __FILE__ ) . 'acf.php');//acf specific code
 require_once( plugin_dir_path( __FILE__ ) . 'custom-post-types.php');//custom post types specific code
 require_once( plugin_dir_path( __FILE__ ) . 'custom-taxonomy.php');//custom taxonomy specific code
 
+//add for every cpt template
 function ncbce_load_templates( $template ) {
     global $post;
 
@@ -67,6 +69,16 @@ function ncbce_load_templates( $template ) {
          * from our plugin directory.
          */
         return plugin_dir_path( __FILE__ ) . 'single-narrative.php';
+    }
+
+     if ( 'profile' === $post->post_type && locate_template( array( 'single-profile.php' ) ) !== $template ) {
+        /*
+         * This is a 'profile' post
+         * AND a 'single profile template' is not found on
+         * theme or child theme directories, so load it
+         * from our plugin directory.
+         */
+        return plugin_dir_path( __FILE__ ) . 'single-profile.php';
     }
 
     return $template;
