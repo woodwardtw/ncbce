@@ -244,6 +244,20 @@ narrative stuff
 	padding: 20px 30px;
 }
 
+.narrative .ncbce-doc, .narrative .ncbce-doc a {
+	background-color: var(--main-purple);
+	color: #fff;
+	font-size: 1.3rem;
+	transition: all .3s;
+	text-decoration: none;
+}
+
+.narrative .ncbce-doc:hover {
+	color: var(--main-orange);
+	background-color: var(--main-purple);
+}
+
+
 /*strategy plan*/
 
 .ncbce-plan {

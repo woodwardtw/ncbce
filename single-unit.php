@@ -19,7 +19,7 @@ get_header();
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="unit">
-
+	<h1><?php the_title();?></h1>
 	<div class="entry-content">
 
 		<?php
