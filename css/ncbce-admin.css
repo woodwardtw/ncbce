@@ -1,3 +1,3 @@
-#menu-posts-unit .wp-menu-image, #menu-posts-week .wp-menu-image, #menu-posts-narrative .wp-menu-image, #menu-posts-profile .wp-menu-image{
-	background-color: #f7901e;
+#menu-posts-unit div.wp-menu-image:before, #menu-posts-week div.wp-menu-image:before, #menu-posts-narrative div.wp-menu-image:before, #menu-posts-profile div.wp-menu-image:before{
+	color: #f7901e;
 }
