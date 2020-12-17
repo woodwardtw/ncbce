@@ -190,6 +190,20 @@ add_shortcode( 'list-weeks', 'ncbce_unit_navigation' );
 add_shortcode( 'list-biz-profiles', 'ncbce_get_profiles' );
 
 
+function ncbce_get_helpdesk_svg(){
+  $arrContextOptions=array(
+    "ssl"=>array(
+        "verify_peer"=>false,
+        "verify_peer_name"=>false,
+    ),
+);  
+
+  echo file_get_contents(plugin_dir_url( __FILE__ )  . "imgs/helpdesk_link.svg", false, stream_context_create($arrContextOptions));
+
+}
+add_shortcode( 'help-desk-img', 'ncbce_get_helpdesk_svg' );
+
+
 //LOGGER -- like frogger but more useful
 
 if ( ! function_exists('write_log')) {

@@ -308,3 +308,8 @@ narrative stuff
 .b-partner .card:hover {
 	border: 1px solid var(--dark-gray);
 }
+
+/*svg*/
+#hd-links .cls-1:hover{
+  fill: orange;
+}
