@@ -244,15 +244,23 @@ narrative stuff
 	padding: 20px 30px;
 }
 
-.narrative .ncbce-doc, .narrative .ncbce-doc a {
+.narrative .ncbce-doc-btn, .narrative .ncbce-doc-btn a {
 	background-color: var(--main-purple);
 	color: #fff;
 	font-size: 1.3rem;
 	transition: all .3s;
 	text-decoration: none;
+	display: block;
+	margin: 10px 0;
+	padding: 10px 10px 10px 30px;
+	background-image: url('../imgs/download.svg');
+	background-repeat: no-repeat;
+	background-position: 10px 50%;
+	background-size: 30px;
+	max-width: 55%;
 }
 
-.narrative .ncbce-doc:hover {
+.narrative .ncbce-doc-btn:hover {
 	color: var(--main-orange);
 	background-color: var(--main-purple);
 }

@@ -283,10 +283,40 @@ function nbce_nar_icon($id){
 	$the_title = get_the_title($id);
 	if(get_field('icon', $id)){
 		$img = get_field('icon', $id);
-		return "<img class='img-fluid nar-icon' src='{$img}' alt='Icon for {$the_title}'>";
-
+		return "<img class='img-fluid nar-icon' src='{$img}' alt='Icon for {$the_title}'>" . nbce_nar_nav();
 	}
 }
+
+function nbce_nar_nav(){
+	 // The Query
+	global $post;
+	$current_id = $post->ID;
+	$html = "<div class='weeks-list'><h2><span class='white-out'>Implementation</span></h2><ul>";
+      $args = array( 'post_type' => 'narrative', 'order' => 'ASC' );
+      $module_query = new WP_Query( $args );
+      // get all the modules for the lesson's page
+      $here = '';
+      if ( $module_query->have_posts() ) {
+          while ( $module_query->have_posts() ) {
+          	// var_dump($current_id . ' - ' . $post->ID . ' ' . get_the_title());
+          	// if ($current_id === get_the_ID()){
+          	// 	$here = 'here';
+          	// } else {
+          	// 	$here = 'not-here';
+          	// }
+              $module_query->the_post();
+              $title = get_the_title();
+              $link = get_the_permalink();
+              $html .= "<li><a href='{$link}'>{$title}</a></li>";
+          }
+          return $html . "</ul></div>";
+      } else {
+          // no posts found
+      }
+      /* Restore original Post Data */
+      wp_reset_postdata();
+}
+
 
 function ncbce_intro(){
 	if(get_field('introduction')){
