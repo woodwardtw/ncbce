@@ -162,6 +162,33 @@ function ncbce_unit_navigation(){
 
 add_shortcode( 'list-weeks', 'ncbce_unit_navigation' );
 
+//get modules 
+
+function ncbce_get_units(){
+      $args = array( 'post_type' => 'unit' );
+      $module_query = new WP_Query( $args );
+      $html = "<div class='units-list'><h2><span class='white-out'>Curriculum</span></h2><ul>";
+
+    if ( $module_query->have_posts() ) {
+          while ( $module_query->have_posts() ) {
+              $module_query->the_post();
+              // $weeks = get_field('weeks', $post->ID);
+              // if (in_array($static_id, $weeks) && $weeks){
+              //   return ncbce_get_weeks($post->ID, get_the_permalink($static_id));
+              // }
+              $link = get_the_permalink();
+              $title = get_the_title();
+              $html .= "<li> <a href='{$link}'>{$title}</a></li>";
+          }
+          return $html . '</ul></div>';
+      } else {
+          // no posts found
+      }
+      /* Restore original Post Data */
+      wp_reset_postdata();    
+}
+
+add_shortcode( 'list-units', 'ncbce_get_units' );
 
   
 //get profile
@@ -198,7 +225,7 @@ function ncbce_get_helpdesk_svg(){
     ),
 );  
 
-  echo file_get_contents(plugin_dir_url( __FILE__ )  . "imgs/helpdesk_link.svg", false, stream_context_create($arrContextOptions));
+  return file_get_contents(plugin_dir_url( __FILE__ )  . "imgs/helpdesk_link.svg", false, stream_context_create($arrContextOptions));
 
 }
 add_shortcode( 'help-desk-img', 'ncbce_get_helpdesk_svg' );

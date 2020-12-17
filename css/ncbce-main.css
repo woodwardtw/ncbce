@@ -83,7 +83,7 @@ purple = #21145f
 	margin-top: 50px;
 }
 
-.nc-section h2, .weeks-list h2 {
+.nc-section h2, .weeks-list h2, .unit-list h2 {
 	font-family: 'Roboto Slab', serif;
 	margin-top: 20px;
 	text-align: left;
@@ -180,25 +180,25 @@ purple = #21145f
 	border-bottom: 5px solid #fff;
 }
 
-.weeks-list h2 {
+.weeks-list h2, .units-list h2 {
 	background-color: rgba(255,255,255,.95);
 	margin-bottom: 0;
 }
 
-.weeks-list ul {
+.weeks-list ul, .units-list ul {
 	list-style-position: outside;
 	list-style: none;
 	margin-left: 0;
 	background-color: rgba(255,255,255,.95);
 }
 
-.weeks-list li {
+.weeks-list li, .unit-list li {
 	line-height: 1;
 	font-size: 1.2rem;
 	margin-bottom: 15px;
 }
 
-.weeks-list li a {
+.weeks-list li a, .units-list li a {
 	padding: 7px 14px;
 	display: block;
 	color: var(--main-purple);
@@ -206,10 +206,24 @@ purple = #21145f
 	transition: all .3s;
 }
 
-.weeks-list li a:hover {
+.weeks-list li a:hover, .units-list li a:hover {
 	color: #fff;
 	background-color: var(--main-purple);
 }
+
+.units-list {
+	background-image: url(../imgs/circuit_down.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center bottom;
+	border-top: 8px solid var(--main-purple);
+	box-shadow: 2px 2px 15px -7px #000000;
+	padding: 0 15px 300px 15px;
+	border-bottom: 5px solid #fff;
+	margin-top: 30px;
+}
+
+
 
 /*
 week 
