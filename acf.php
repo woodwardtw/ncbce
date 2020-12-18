@@ -375,7 +375,7 @@ function ncbce_nar_resources_repeater(){
 	    		$url = get_sub_field('resource_link');
 	    		$title = "<a href='{$url}'>{$title}</a>";
 	    	}
-	    	$html .= "<div class='nar-resource'><div class='nar-resource-title'>{$title}</div><div class='nar-resource-desc'>{$description}</div>";
+	    	$html .= "<div class='nar-resource'><div class='nar-resource-title'>{$title}</div><div class='nar-resource-desc'>{$description}</div></div>";
 	    // End loop.
 	    endwhile;
 	    return $html . "</div>";

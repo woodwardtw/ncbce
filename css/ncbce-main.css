@@ -177,7 +177,7 @@ purple = #21145f
 	border-top: 8px solid var(--main-purple);
 	box-shadow: 2px 2px 15px -7px #000000;
 	padding: 0 15px 300px 15px;
-	border-bottom: 5px solid #fff;
+	border-bottom: 12px solid #fff;
 }
 
 .weeks-list h2, .units-list h2 {
@@ -192,7 +192,7 @@ purple = #21145f
 	background-color: rgba(255,255,255,.95);
 }
 
-.weeks-list li, .unit-list li {
+.weeks-list li, .units-list li {
 	line-height: 1;
 	font-size: 1.2rem;
 	margin-bottom: 15px;
@@ -219,7 +219,7 @@ purple = #21145f
 	border-top: 8px solid var(--main-purple);
 	box-shadow: 2px 2px 15px -7px #000000;
 	padding: 0 15px 300px 15px;
-	border-bottom: 5px solid #fff;
+	border-bottom: 12px solid #fff;
 	margin-top: 30px;
 }
 
@@ -279,6 +279,19 @@ narrative stuff
 	background-color: var(--main-purple);
 }
 
+.nar-icon {
+	margin-bottom: 20px;
+}
+
+.nar-resource {
+	margin-bottom: 10px;
+	border-bottom: 1px solid var(--light-gray);
+}
+
+.nar-resource-title, .nar-resource-desc {
+	display: inline-block;
+	line-height: 1.2;
+}
 
 /*strategy plan*/
 
