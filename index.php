@@ -165,7 +165,7 @@ add_shortcode( 'list-weeks', 'ncbce_unit_navigation' );
 //get modules 
 
 function ncbce_get_units(){
-      $args = array( 'post_type' => 'unit' );
+      $args = array( 'post_type' => 'unit', 'order' => 'ASC', 'orderby' => 'title' );
       $module_query = new WP_Query( $args );
       $html = "<div class='units-list'><h2><span class='white-out'>Curriculum</span></h2><ul>";
 
