@@ -340,3 +340,24 @@ narrative stuff
 #hd-links .cls-1:hover{
   fill: orange;
 }
+
+
+/*video*/
+
+.ncbce-video-container {
+    /* width is set as 100% here. any width can be specified as per requirement */
+    width: 100%;
+    padding-top: 56.25%;
+    height: 0px;
+    position: relative;
+    box-shadow: 8px 8px 0px var(--main-orange); 
+    margin: 25px 0;
+}
+
+.ncbce-video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
