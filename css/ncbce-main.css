@@ -180,7 +180,7 @@ purple = #21145f
 	border-bottom: 12px solid #fff;
 }
 
-.weeks-list h2, .units-list h2 {
+.weeks-list h2, .units-list h2, .certs-list h2 {
 	background-color: rgba(255,255,255,.95);
 	margin-bottom: 0;
 }
@@ -190,15 +190,26 @@ purple = #21145f
 	list-style: none;
 	margin-left: 0;
 	background-color: rgba(255,255,255,.95);
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
-.weeks-list li, .units-list li {
+.certs-list ul {
+	list-style-position: outside;
+	list-style: bullet;
+	margin-left: 30px;
+	background-color: rgba(255,255,255,.95);
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.weeks-list li, .units-list li, .certs-list li {
 	line-height: 1;
 	font-size: 1.2rem;
 	margin-bottom: 15px;
 }
 
-.weeks-list li a, .units-list li a {
+.weeks-list li a, .units-list li a, .certs-list li a {
 	padding: 7px 14px;
 	display: block;
 	color: var(--main-purple);
@@ -206,12 +217,12 @@ purple = #21145f
 	transition: all .3s;
 }
 
-.weeks-list li a:hover, .units-list li a:hover {
+.weeks-list li a:hover, .units-list li a:hover, .certs-list li a:hover {
 	color: #fff;
 	background-color: var(--main-purple);
 }
 
-.units-list {
+.units-list, .certs-list {
 	background-image: url(../imgs/circuit_down.svg);
 	background-repeat: no-repeat;
 	background-size: contain;

@@ -162,30 +162,43 @@ function ncbce_unit_navigation(){
 
 add_shortcode( 'list-weeks', 'ncbce_unit_navigation' );
 
-//get modules 
+//get valued certifications 
 
-function ncbce_get_units(){
-      $args = array( 'post_type' => 'unit', 'order' => 'ASC', 'orderby' => 'title' );
-      $module_query = new WP_Query( $args );
-      $html = "<div class='units-list'><h2><span class='white-out'>Curriculum</span></h2><ul>";
-
-    if ( $module_query->have_posts() ) {
-          while ( $module_query->have_posts() ) {
-              $module_query->the_post();
-              // $weeks = get_field('weeks', $post->ID);
-              // if (in_array($static_id, $weeks) && $weeks){
-              //   return ncbce_get_weeks($post->ID, get_the_permalink($static_id));
-              // }
-              $link = get_the_permalink();
-              $title = get_the_title();
-              $html .= "<li> <a href='{$link}'>{$title}</a></li>";
-          }
-          return $html . '</ul></div>';
-      } else {
-          // no posts found
+function ncbce_get_certifications(){
+      global $post;      
+      $certs = get_field('valued_certifications', $post->ID);
+      if ($certs){
+          $html = "<div class='certs-list'><h2><span class='white-out'>Valued Certifications for Employees</span></h2>{$certs}</div>";
       }
-      /* Restore original Post Data */
+      echo $html;
+}
+
+add_shortcode( 'list-certs', 'ncbce_get_certifications' );
+
+
+//get modules 
+function ncbce_get_units(){
+      ncbce_get_certifications();//show certs on profile pages
+      if (get_post_type() != 'profile'){
+         $args = array( 'post_type' => 'unit', 'order' => 'ASC', 'orderby' => 'title' );
+          $module_query = new WP_Query( $args );
+          $html = "<div class='units-list'><h2><span class='white-out'>Curriculum</span></h2><ul>";
+
+        if ( $module_query->have_posts() ) {
+              while ( $module_query->have_posts() ) {
+                  $module_query->the_post();             
+                  $link = get_the_permalink();
+                  $title = get_the_title();
+                  $html .= "<li> <a href='{$link}'>{$title}</a></li>";
+              }
+              return $html . '</ul></div>';
+          } else {
+              // no posts found
+          }
+          /* Restore original Post Data */
       wp_reset_postdata();    
+      }
+     
 }
 
 add_shortcode( 'list-units', 'ncbce_get_units' );
@@ -229,6 +242,9 @@ function ncbce_get_helpdesk_svg(){
 
 }
 add_shortcode( 'help-desk-img', 'ncbce_get_helpdesk_svg' );
+
+
+
 
 
 //LOGGER -- like frogger but more useful

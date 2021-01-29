@@ -397,6 +397,15 @@ function ncbce_profile_mission(){
 	}
 }
 
+function ncbce_profile_partnering(){
+	$node = ncbce_rand_node();
+	global $post;
+	$title = get_the_title();
+	if(get_field('partnering')){
+		$partner = get_field('partnering');
+		return "<div class='partner nc-section'><h2{$node}><span class='white-out'>How does {$title} partner with NC Districts & Schools?</span></h2>{$partner}</div>";
+	}
+}
 
 function ncbce_profile_opps(){
 	$node = ncbce_rand_node();
