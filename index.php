@@ -139,6 +139,7 @@ function ncbce_unit_navigation(){
 //get weeks 
     function ncbce_get_weeks($id, $current_location){
       global $post;
+      $path = get_field('curricular_path', $id);      
       $weeks = get_field('weeks', $id);
       if( $weeks ){
           $html = "<div class='weeks-list'><h2><span class='white-out'>Weeks</span></h2><ul>";
@@ -180,7 +181,18 @@ add_shortcode( 'list-certs', 'ncbce_get_certifications' );
 function ncbce_get_units(){
       ncbce_get_certifications();//show certs on profile pages
       if (get_post_type() != 'profile'){
-         $args = array( 'post_type' => 'unit', 'order' => 'ASC', 'orderby' => 'title' );
+          $path = get_field('curricular_path', $id);          
+          $args = array( 
+                  'post_type' => 'unit', 
+                  'order' => 'ASC', 
+                  'orderby' => 'title',
+                  'tax_query' => array(
+                    array (
+                        'taxonomy' => 'path',
+                        'field' => 'id',
+                        'terms' => $path,
+                    )
+                ));
           $module_query = new WP_Query( $args );
           $html = "<div class='units-list'><h2><span class='white-out'>Curriculum</span></h2><ul>";
 
@@ -324,3 +336,4 @@ function fix_svg() {
         </style>';
 }
 add_action( 'admin_head', 'fix_svg' );
+

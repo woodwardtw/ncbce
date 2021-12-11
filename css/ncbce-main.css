@@ -372,3 +372,49 @@ narrative stuff
     top: 0;
     left: 0;
 }
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	.postid-703 table, .postid-703 thead, .postid-703 tbody, .postid-703 th, .postid-703 td, .postid-703 tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.postid-703 thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.postid-703 tr { border: 1px solid #ccc; }
+	
+	.postid-703 td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	.postid-703 td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	.postid-703 td:nth-of-type(1):before { content: "Unit"; }
+	.postid-703 td:nth-of-type(2):before { content: "Outcome"; }
+	.postid-703 td:nth-of-type(3):before { content: "Standard"; }
+	
+}

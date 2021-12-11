@@ -33,6 +33,7 @@ function ncbce_dpi_tax() {
 		'hierarchical'               => false,
 		'public'                     => true,
 		'show_ui'                    => true,
+		'meta_box_cb'                => false,
 		'show_admin_column'          => false,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
@@ -73,6 +74,7 @@ function ncbce_hdi_tax() {
 		'hierarchical'               => false,
 		'public'                     => true,
 		'show_ui'                    => true,
+		'meta_box_cb'                => false,
 		'show_admin_column'          => false,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
@@ -114,6 +116,7 @@ function ncbce_CompTIA_tax() {
 		'hierarchical'               => false,
 		'public'                     => true,
 		'show_ui'                    => true,
+		'meta_box_cb'               => false,
 		'show_admin_column'          => false,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
@@ -154,6 +157,7 @@ function ncbce_service_tax() {
 		'hierarchical'               => false,
 		'public'                     => true,
 		'show_ui'                    => true,
+		'meta_box_cb'               => false,
 		'show_admin_column'          => false,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
@@ -195,6 +199,7 @@ function ncbce_opp_tax() {
 		'hierarchical'               => false,
 		'public'                     => true,
 		'show_ui'                    => true,
+		'meta_box_cb'                => false,
 		'show_admin_column'          => false,
 		'show_in_nav_menus'          => true,
 		'show_tagcloud'              => true,
@@ -206,4 +211,122 @@ function ncbce_opp_tax() {
 add_action( 'init', 'ncbce_opp_tax', 0 );
 
 
+//add path taxonomy
+add_action( 'init', 'path_register_tax_path', 0 );
+/**
+ * Register Taxonomy paths
+ */
+function path_register_tax_path() {
 
+  $labels = array(
+    'name'          => __( 'paths', 'textdomain' ),
+    'singular_name' => __( 'path', 'textdomain' ),
+    'search_items'  => __( 'Search path', 'textdomain' ),
+    'all_items'     => __( 'All paths', 'textdomain' ),
+    'edit_item'     => __( 'Edit path', 'textdomain' ),
+    'update_item'   => __( 'Update path', 'textdomain' ),
+    'add_new_item'  => __( 'Add New path', 'textdomain' ),
+    'new_item_name' => __( 'Add New path', 'textdomain' ),
+  );
+
+  register_taxonomy(
+    'path',
+    array(
+      'unit',
+      'narrative',
+      'week'
+    ),
+    array(
+      'hierarchical'       => true,
+      'public'             => true,
+      'publicly_queryable' => true,
+      'labels'             => $labels,
+      'show_ui'            => true,
+	  'meta_box_cb'        => false,
+      'show_in_rest'       => true,
+      'show_admin_column'  => true,
+      'query_var'          => true,
+      'rewrite'            => array(
+        'slug' => _x( 'path', 'slug', 'textdomain' ),
+      ),
+    )
+  );
+}
+
+add_action( 'init', 'guide_topics_register_tax_guidetopics', 0 );
+/**
+ * Register Taxonomy A+ Guide Topics
+ */
+function guide_topics_register_tax_guidetopics() {
+
+	$labels = array(
+		'name'          => __( 'A+ Guide Topics', 'textdomain' ),
+		'singular_name' => __( 'A+ Guide Topic', 'textdomain' ),
+		'search_items'  => __( 'Search A+ Guide Topic', 'textdomain' ),
+		'all_items'     => __( 'All A+ Guide Topics', 'textdomain' ),
+		'edit_item'     => __( 'Edit A+ Guide Topic', 'textdomain' ),
+		'update_item'   => __( 'Update A+ Guide Topic', 'textdomain' ),
+		'add_new_item'  => __( 'Add New A+ Guide Topic', 'textdomain' ),
+		'new_item_name' => __( 'Add New A+ Guide Topic', 'textdomain' ),
+	);
+
+	register_taxonomy(
+		'guidetopics',
+		array(
+			'week',
+		),
+		array(
+			'hierarchical'       => true,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'labels'             => $labels,
+			'show_ui'            => true,
+			'meta_box_cb'        => false,
+			'show_in_rest'       => true,
+			'show_admin_column'  => false,
+			'query_var'          => true,
+			'rewrite'            => array(
+				'slug' => _x( 'guidetopic', 'slug', 'textdomain' ),
+			),
+		)
+	);
+}
+
+add_action( 'init', 'aexam_register_tax_examobjectives', 0 );
+/**
+ * Register Taxonomy A+ Exam Objectives
+ */
+function aexam_register_tax_examobjectives() {
+
+	$labels = array(
+		'name'          => __( 'A+ Objectives', 'textdomain' ),
+		'singular_name' => __( 'A+ Objective', 'textdomain' ),
+		'search_items'  => __( 'Search A+ Objectives', 'textdomain' ),
+		'all_items'     => __( 'All A+ Objectives', 'textdomain' ),
+		'edit_item'     => __( 'Edit A+ Objective', 'textdomain' ),
+		'update_item'   => __( 'Update A+ Objective', 'textdomain' ),
+		'add_new_item'  => __( 'Add New A+ Objective', 'textdomain' ),
+		'new_item_name' => __( 'Add New A+ Objective', 'textdomain' ),
+	);
+
+	register_taxonomy(
+		'examobjectives',
+		array(
+			'week',
+		),
+		array(
+			'hierarchical'       => true,
+			'public'             => true,
+			'publicly_queryable' => true,
+			'labels'             => $labels,
+			'show_ui'            => true,
+			'show_in_rest'       => true,
+			'show_admin_column'  => false,
+			'meta_box_cb'        => false,
+			'query_var'          => true,
+			'rewrite'            => array(
+				'slug' => _x( 'examobjective', 'slug', 'textdomain' ),
+			),
+		)
+	);
+}
