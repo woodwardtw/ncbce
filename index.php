@@ -119,9 +119,11 @@ function ncbce_unit_navigation(){
           while ( $module_query->have_posts() ) {
               $module_query->the_post();
               $weeks = get_field('weeks', $post->ID);
-              if (in_array($static_id, $weeks) && $weeks){
-                return ncbce_get_weeks($post->ID, get_the_permalink($static_id));
-              }
+              if($weeks){
+                if (in_array($static_id, $weeks) && $weeks){
+                  return ncbce_get_weeks($post->ID, get_the_permalink($static_id));
+                }
+              }              
           }
       } else {
           // no posts found
