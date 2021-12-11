@@ -148,6 +148,43 @@ function ncbce_week_hdi(){
 	}
 }
 
+function ncbce_week_aplus(){
+	$node = ncbce_rand_node();
+	if(get_field('a+_guide_topics')){
+		$html = "<div class='a-plus nc-section'><h2{$node}><span class='white-out'>A+ Standards</span></h2>";
+		$topics = get_field('a+_guide_topics');
+		$parents = array();
+		foreach ($topics as $key => $topic) {
+			# code...
+			if($topic->parent === 0){
+				array_push($parents,$topic);//get topics that don't have parents
+			}
+		}
+		foreach ($parents as $key => $parent){
+			$parent_name = $parent->name;
+			$parent_id = $parent->term_id;
+			$html .= "<h3>{$parent_name}</h3>";
+			foreach ($topics as $key => $topic) {
+				if($topic->parent === $parent_id){//find children that match the parent id
+					$sub_name = $topic->name;
+					$html .= "<div class='a-sub-cat'>{$sub_name}</div>";
+				}
+			}
+		}
+	return $html . '</div>';
+	}
+}
+
+function find_a_children($topics, $parent_id){
+	$children = array_filter($array, function($topics){
+		if (isset($topics->parent)) {
+			foreach ($topics->parent as $parent) {
+				if ($topics->parent != $parent_id) return false;
+			}
+		}
+		return $children;
+	});
+}
 
 function ncbce_week_knowledge(){
 	$html = '';

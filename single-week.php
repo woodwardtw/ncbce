@@ -30,6 +30,7 @@ get_header();
 			echo ncbce_week_dpi();
 			echo ncbce_week_comptia();
 			echo ncbce_week_hdi();
+			echo ncbce_week_aplus();
 		 ?>			
 		 <div class="essentials row nc-section">
 		 	<?php echo ncbce_week_knowledge();?>
