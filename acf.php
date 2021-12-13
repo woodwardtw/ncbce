@@ -24,9 +24,9 @@ function ncbce_unit_description(){
 function ncbce_unit_weeks(){
 	$node = ncbce_rand_node();
 	$weeks = get_field('weeks');
-	$html = '<div class="instructional-time nc-section">';
-	$html .= "<h2{$node}><span class='white-out'>Instructional Time</span></h2><div class='weekly-total'><h3>" . sizeof($weeks) . " weeks</h3></div><ul>";
 	if( $weeks ): 
+		$html = '<div class="instructional-time nc-section">';
+		$html .= "<h2{$node}><span class='white-out'>Instructional Time</span></h2><div class='weekly-total'><h3>" . sizeof($weeks) . " weeks</h3></div><ul>";
 	    foreach( $weeks as $key=>$week ): 
 	    	$permalink = get_permalink( $week );
         	$title = get_the_title( $week );
@@ -204,6 +204,9 @@ function ncbce_week_knowledge(){
 		// No value.
 		else :
 		    // Do something...
+		if(get_field('essential_knowledge_paragraph')){
+			return "<div class='knowledge col-md-6 nc-section'><h2{$node}><span class='white-out'>Knowledge</span></h2>" . get_field('essential_knowledge_paragraph') . '</div>';
+		}
 		endif;
 	}
 
@@ -226,6 +229,9 @@ function ncbce_week_skills(){
 		// No value.
 		else :
 		    // Do something...
+		if(get_field('essential_skills_paragraph')){
+			return "<div class='skills col-md-6 nc-section'><h2{$node}><span class='white-out'>Skills</span></h2>" . get_field('essential_skills_paragraph') . '</div>';
+		}
 		endif;
 	}
 
@@ -248,7 +254,12 @@ function ncbce_week_vocab(){
 		// No value.
 		else :
 		    // Do something...
+		if (get_field('vocabulary_block') && have_rows('vocabulary') === false){
+			$html = "<div class='vocabulary nc-section'><h2{$node}><span class='white-out'>Vocabulary</span></h2>";
+			return $html . get_field('vocabulary_block') . '</div>';	
+			}
 		endif;
+	
 	}
 
 

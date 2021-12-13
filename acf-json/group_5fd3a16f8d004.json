@@ -247,6 +247,25 @@
             ]
         },
         {
+            "key": "field_61b5fdfa6907d",
+            "label": "Essential Knowledge Paragraph",
+            "name": "essential_knowledge_paragraph",
+            "type": "wysiwyg",
+            "instructions": "To deal with non-standard patterns.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_5fd3b3f467a2a",
             "label": "Essential Skills Block",
             "name": "essential_skills_block",
@@ -285,6 +304,25 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_61b5fdcc6907c",
+            "label": "Essential Skills Paragraph",
+            "name": "essential_skills_paragraph",
+            "type": "wysiwyg",
+            "instructions": "To deal with non-standard patterns.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_5fd528066dd61",
@@ -384,6 +422,25 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_61b5f33ebfa58",
+            "label": "Vocabulary Block",
+            "name": "vocabulary_block",
+            "type": "wysiwyg",
+            "instructions": "For when you have a million vocabulary words.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
         },
         {
             "key": "field_5fd3b4377edb2",
@@ -607,5 +664,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1639247666
+    "modified": 1639317163
 }
