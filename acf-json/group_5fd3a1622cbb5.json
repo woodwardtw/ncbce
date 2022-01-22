@@ -1,0 +1,195 @@
+{
+    "key": "group_5fd3a1622cbb5",
+    "title": "Unit",
+    "fields": [
+        {
+            "key": "field_5fd3aa05da56a",
+            "label": "Unit Description",
+            "name": "unit_description",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 1
+        },
+        {
+            "key": "field_5fd3b635b358d",
+            "label": "Weeks",
+            "name": "weeks",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "week"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_5fd3aa31da56b",
+            "label": "General Weekly Map",
+            "name": "general_weekly_map",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_5fd3aa52da56c",
+                    "label": "Monday",
+                    "name": "monday",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Introduction to problem\r\n\r\nOnline Pre-assessment (available for student practice, as well)\r\n\r\nTeam meetings to develop project plan and goals",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1
+                },
+                {
+                    "key": "field_5fd3aa69da56d",
+                    "label": "Tuesday",
+                    "name": "tuesday",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Review content resources with whole group\r\n\r\nSmall group and independent exploration of resources\r\n\r\nContribute to team project",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1
+                },
+                {
+                    "key": "field_5fd3aa75da56e",
+                    "label": "Wednesday",
+                    "name": "wednesday",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Hands-on exploration with IT professionals\r\n\r\nTeam progress check with supervisor (using project plan)",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1
+                },
+                {
+                    "key": "field_5fd3aa85da56f",
+                    "label": "Thursday",
+                    "name": "thursday",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Hands-on exploration with IT professionals\r\n\r\nSmall group and independent exploration of resources\r\n\r\nContribute to team project",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1
+                },
+                {
+                    "key": "field_5fd3aa91da570",
+                    "label": "Friday",
+                    "name": "friday",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "20",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Team progress check with supervisor or sharing of progress with whole group\r\n\r\nOnline post-assessment\r\n\r\nMonitor progress and adjust project plan as necessary",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "unit"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1639834652
+}

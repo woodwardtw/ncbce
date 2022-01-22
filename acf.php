@@ -556,23 +556,25 @@ add_filter('acf/load_value/name=vocabulary', 'sort_vocab_alpha', 10, 3);
 
 defined( 'ABSPATH' ) || exit;
 
+
 	//save acf json
-		add_filter('acf/settings/save_json', 'ncbce_json_save_point');
+add_filter('acf/settings/save_json', 'ncbce_json_save_point');
 		 
-		function ncbce_json_save_point( $path ) {
-		    
-		    // update path
-		    $path = plugin_dir_path(__FILE__) . '/acf-json'; //replace w get_stylesheet_directory() for theme
-		    
-		    
-		    // return
-		    return $path;
-		    
-		}
+function ncbce_json_save_point( $path ) {
+		
+		// update path
+		$path = plugin_dir_path(__FILE__) . '/acf-json'; //replace w get_stylesheet_directory() for theme
+		
+		
+		// return
+		return $path;
+		
+	}
 
 
-		// load acf json
-		add_filter('acf/settings/load_json', 'ncbce_json_load_point');
+
+// load acf json
+add_filter('acf/settings/load_json', 'ncbce_json_load_point');
 
 		function ncbce_json_load_point( $paths ) {
 		    
