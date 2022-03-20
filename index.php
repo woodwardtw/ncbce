@@ -182,41 +182,53 @@ add_shortcode( 'list-certs', 'ncbce_get_certifications' );
 //get modules 
 function ncbce_get_units(){
       ncbce_get_certifications();//show certs on profile pages
-      if (get_post_type() != 'profile'){
-          $path = get_field('curricular_path', $id);          
-          $args = array( 
-                  'post_type' => 'unit', 
-                  'order' => 'ASC', 
-                  'orderby' => 'title',
-                  'tax_query' => array(
-                    array (
-                        'taxonomy' => 'path',
-                        'field' => 'id',
-                        'terms' => $path,
-                    )
-                ));
-          $module_query = new WP_Query( $args );
-          $html = "<div class='units-list'><h2><span class='white-out'>Curriculum</span></h2><ul>";
-
-        if ( $module_query->have_posts() ) {
-              while ( $module_query->have_posts() ) {
-                  $module_query->the_post();             
-                  $link = get_the_permalink();
-                  $title = get_the_title();
-                  $html .= "<li> <a href='{$link}'>{$title}</a></li>";
-              }
-              return $html . '</ul></div>';
-          } else {
-              // no posts found
-          }
-          /* Restore original Post Data */
-      wp_reset_postdata();    
+      $paths = [166, 167, 168];
+      foreach ($paths as $key => $path) {
+        // code...
+          echo ncbce_make_unit_nav($path);
       }
      
 }
 
 add_shortcode( 'list-units', 'ncbce_get_units' );
 
+
+function ncbce_make_unit_nav($path_id){
+   if (get_post_type() != 'profile'){
+          $path = get_field('curricular_path', $id);     
+         // var_dump($path);     
+          $args = array( 
+                  'post_type' => 'unit', 
+                  'order' => 'ASC', 
+                  'orderby' => 'title',
+                  'posts_per_page' => -1,
+                  'tax_query' => array(
+                    array (
+                        'taxonomy' => 'path',
+                        'field' => 'id',
+                        'terms' => $path_id,
+                    )
+                  )
+                );
+          $module_query = new WP_Query( $args );
+          $curricular_name = get_term($path_id, 'path')->name;
+          $html = "<div class='units-list'><h2><span class='white-out'>{$curricular_name} Curriculum</span></h2><ul>";
+
+          if ( $module_query->have_posts() ) {
+                while ( $module_query->have_posts() ) {
+                    $module_query->the_post();             
+                    $link = get_the_permalink();
+                    $title = get_the_title();
+                    $html .= "<li> <a href='{$link}'>{$title}</a></li>";
+                }
+                return $html . '</ul></div>';
+            } else {
+                // no posts found
+            }
+            /* Restore original Post Data */
+      wp_reset_postdata();    
+      }
+}
   
 //get profile
     function ncbce_get_profiles(){
